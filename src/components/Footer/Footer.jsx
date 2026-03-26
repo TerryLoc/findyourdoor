@@ -38,7 +38,7 @@ function Footer() {
           </button>
         </div>
 
-        <p className={styles.copy}>© 2026 Terry Loughran · All rights reserved</p>
+        <p className={styles.copy}>© {new Date().getFullYear()} Terry Loughran · All rights reserved</p>
         <p className={styles.bottom}>Life coach for men in Ireland · Wicklow, Ireland</p>
       </div>
     </footer>
