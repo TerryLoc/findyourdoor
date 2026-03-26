@@ -9,6 +9,13 @@ const item = (delay) => ({
 });
 
 function Hero() {
+  const scrollToSection = (event, selector) => {
+    event.preventDefault();
+    const target = document.querySelector(selector);
+    if (!target) return;
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <section id="hero" className={styles.hero}>
       <div className={styles.overlay} aria-hidden="true" />
@@ -32,10 +39,20 @@ function Hero() {
             {HERO.body}
           </motion.p>
           <motion.div className={styles.actions} {...item(0.7)}>
-            <a className={styles.primaryCta} href="#book" aria-label="Book a free 30-minute coaching call">
+            <a
+              className={styles.primaryCta}
+              href="#book"
+              aria-label="Book a free 30-minute coaching call"
+              onClick={(event) => scrollToSection(event, '#book')}
+            >
               {HERO.cta}
             </a>
-            <a className={styles.secondaryCta} href="#about" aria-label="Read Terry's story">
+            <a
+              className={styles.secondaryCta}
+              href="#about"
+              aria-label="Read Terry's story"
+              onClick={(event) => scrollToSection(event, '#about')}
+            >
               {HERO.ctaSecondary}
             </a>
           </motion.div>
@@ -45,6 +62,7 @@ function Hero() {
         className={styles.scrollHint}
         href="#about"
         aria-label="Scroll to about section"
+        onClick={(event) => scrollToSection(event, '#about')}
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1 }}

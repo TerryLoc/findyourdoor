@@ -20,9 +20,17 @@ function AppLayout() {
 
 function App() {
   useEffect(() => {
-    if (window.location.hash === '#hero') {
-      window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+    const cleanHashes = ['#hero', '#about', '#for-you', '#offer', '#book', '#contact', '#philosophy'];
+    const { hash, pathname, search } = window.location;
+
+    if (!cleanHashes.includes(hash)) return;
+
+    const target = document.querySelector(hash);
+    if (target) {
+      target.scrollIntoView({ block: 'start' });
     }
+
+    window.history.replaceState(null, '', `${pathname}${search}`);
   }, []);
 
   return (

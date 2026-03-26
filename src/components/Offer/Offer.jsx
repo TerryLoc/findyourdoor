@@ -2,6 +2,13 @@ import { OFFER } from '@/constants/content';
 import styles from './Offer.module.css';
 
 function Offer() {
+  const handleBookClick = (event) => {
+    event.preventDefault();
+    const target = document.querySelector('#book');
+    if (!target) return;
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   return (
     <section id="offer" className={styles.section}>
       <div className="container section-pad">
@@ -25,7 +32,7 @@ function Offer() {
             <p className={styles.priceSub}>{OFFER.priceSub}</p>
           </div>
 
-          <a href="#book" className={styles.cta}>
+          <a href="#book" className={styles.cta} onClick={handleBookClick}>
             {OFFER.cta}
           </a>
           <p className={styles.note}>{OFFER.note}</p>
