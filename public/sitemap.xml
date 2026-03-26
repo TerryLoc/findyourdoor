@@ -3,14 +3,14 @@
   <url>
     <loc>https://findyourdoor.ie/</loc>
     <lastmod>2026-03-26</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://findyourdoor.ie/privacy-policy</loc>
+    <loc>https://findyourdoor.ie/privacy</loc>
     <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://findyourdoor.ie/cookie-policy</loc>

@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
 import SEO from '@/components/SEO/SEO';
 import { SITE } from '@/constants/content';
+import { usePageTitle } from '@/hooks/usePageTitle';
 import styles from './LegalPage.module.css';
 
 const updatedAt = '26 March 2026';
@@ -11,7 +12,7 @@ const schema = {
   '@context': 'https://schema.org',
   '@type': 'PrivacyPolicy',
   name: 'Privacy Policy - Find Your Door',
-  url: 'https://findyourdoor.ie/privacy-policy',
+  url: 'https://findyourdoor.ie/privacy',
   publisher: {
     '@type': 'Person',
     name: 'Terry Loughran',
@@ -19,18 +20,20 @@ const schema = {
 };
 
 function PrivacyPolicy() {
+  usePageTitle('Privacy Policy');
+
   return (
     <div className={styles.page}>
       <SEO
         title="Privacy Policy | Find Your Door"
         description="How Find Your Door collects, uses, and protects personal data in line with GDPR."
-        pathname="/privacy-policy"
+        pathname="/privacy"
         type="article"
         structuredData={schema}
       />
       <Navbar />
 
-      <main className={styles.main}>
+      <main id="main-content" role="main" className={styles.main}>
         <div className="container">
           <header className={styles.heading}>
             <p className={styles.kicker}>Legal</p>

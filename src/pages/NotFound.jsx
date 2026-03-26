@@ -2,9 +2,12 @@ import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
 import SEO from '@/components/SEO/SEO';
+import { usePageTitle } from '@/hooks/usePageTitle';
 import styles from './NotFound.module.css';
 
 function NotFound() {
+  usePageTitle('Page Not Found');
+
   return (
     <div className={styles.page}>
       <SEO
@@ -16,7 +19,7 @@ function NotFound() {
 
       <Navbar />
 
-      <main className={styles.main}>
+      <main id="main-content" role="main" className={styles.main}>
         <div className="container">
           <div className={styles.panel}>
             <p className={styles.kicker}>404</p>

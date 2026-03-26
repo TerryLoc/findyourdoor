@@ -31,15 +31,15 @@ function Footer() {
         </div>
 
         <div className={styles.legalLinks}>
-          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link to="/privacy">Privacy Policy</Link>
           <Link to="/cookie-policy">Cookie Policy</Link>
           <button type="button" onClick={() => window.dispatchEvent(new Event('fyd:open-cookie-settings'))}>
             Cookie settings
           </button>
         </div>
 
-        <p className={styles.copy}>© 2025 Terry Loughran · All rights reserved</p>
-        <p className={styles.bottom}>Built with intention · Wicklow, Ireland</p>
+        <p className={styles.copy}>© 2026 Terry Loughran · All rights reserved</p>
+        <p className={styles.bottom}>Life coach for men in Ireland · Wicklow, Ireland</p>
       </div>
     </footer>
   );

@@ -14,7 +14,14 @@ function About() {
         <div className={styles.grid}>
           <div className={styles.imageWrap}>
             <div className={styles.imageFrame}>
-              <img src={terryPhoto} alt="Terry Loughran" className={styles.image} />
+              <img
+                src={terryPhoto}
+                alt="Terry Loughran, life coach for men based in Wicklow, Ireland"
+                className={styles.image}
+                loading="lazy"
+                width="660"
+                height="880"
+              />
               <div className={styles.imageBorder} aria-hidden="true" />
             </div>
           </div>

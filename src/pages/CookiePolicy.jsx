@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar/Navbar';
 import Footer from '@/components/Footer/Footer';
 import SEO from '@/components/SEO/SEO';
+import { usePageTitle } from '@/hooks/usePageTitle';
 import styles from './LegalPage.module.css';
 
 const updatedAt = '26 March 2026';
@@ -14,6 +15,8 @@ const schema = {
 };
 
 function CookiePolicy() {
+  usePageTitle('Cookie Policy');
+
   return (
     <div className={styles.page}>
       <SEO
@@ -25,7 +28,7 @@ function CookiePolicy() {
       />
       <Navbar />
 
-      <main className={styles.main}>
+      <main id="main-content" role="main" className={styles.main}>
         <div className="container">
           <header className={styles.heading}>
             <p className={styles.kicker}>Legal</p>

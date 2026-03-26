@@ -29,10 +29,10 @@ export const ABOUT = {
   eyebrow: 'My story',
   headline: 'For most of my twenties, I was disappearing.',
   paragraphs: [
-    "I started young. Weed in school, then heavier stuff through my twenties. Alcohol ran in my family and I ran with it. I had real talent — a career in performing arts, acting, stunts — but I kept choosing the wrong things over the right ones. The potential was there. I just wasn't showing up for it.",
-    'The turning point came when I met the woman who became my wife. She was studying Choice Theory at the time and working with a practitioner herself — and watching that process from close up began to shift something in me. I started to understand that the way out wasn\'t just about willpower. It was about choice — conscious, deliberate, fully owned choice.',
-    'So I stopped. Everything. Cold turkey — drink, drugs, all of it. But this time I didn\'t do it alone. I found a therapist who worked with Choice Theory and for the first time in my life I had someone in my corner — not to fix me, but to listen, to guide and to help me hear myself clearly. That combination of inner decision and outside support changed everything.',
-    'It was the hardest thing I\'ve ever done. There were demons in that silence I hadn\'t expected. But on the other side of it, I found myself.',
+    "I started young. Weed in school, then heavier stuff through my twenties. Alcohol ran in my family and I ran with it. I had real talent — a career in performing arts, acting, stunts — but I kept choosing the wrong things over the right ones. The potential was there. I just wasn't showing up for it. Today that lived experience shapes my work as a life coach for men in Ireland.",
+    "The turning point came when I met the woman who became my wife. She was studying Choice Theory at the time and working with a practitioner herself — and watching that process from close up began to shift something in me. I started to understand that the way out wasn't just about willpower. It was about choice — conscious, deliberate, fully owned choice.",
+    "So I stopped. Everything. Cold turkey — drink, drugs, all of it. But this time I didn't do it alone. I found a therapist who worked with Choice Theory and for the first time in my life I had someone in my corner — not to fix me, but to listen, to guide and to help me hear myself clearly. That combination of inner decision and outside support changed everything.",
+    "It was the hardest thing I've ever done. There were demons in that silence I hadn't expected. But on the other side of it, I found myself.",
     'That experience rooted me deeply in the work of Dr. William Glasser — the idea that we are never without choice, even when it feels that way. We choose to pick up the glass. We choose to put it down. The choice is always ours — but we have to want it from somewhere deep inside and sometimes we need someone alongside us before that wanting becomes real.',
     'Addiction never leaves you. But with a clear mind and a daily choice to stay the path, my life genuinely took off. I built a career as a professional stuntman across major TV shows and films in Ireland. I founded Green Grape Productions, a media production company in Wicklow, directing and editing across platforms and channels. I worked in sales and leadership, helping teams and people find their footing. And through all of it, I kept finding myself in the same conversation — sitting with men who were stuck, lost or quietly falling apart and helping them find their way back.',
     "That's why I coach. Not because I read the right books. Because I've been in the dark — and I know that with the right support, the choice to walk out of it is always yours.",
@@ -61,7 +61,8 @@ export const PHILOSOPHY = {
 export const OFFER = {
   eyebrow: 'Work with me',
   headline: 'The 90-Day Clarity & Confidence Programme',
-  subheadline: '1:1 private coaching for men who are ready to stop drifting',
+  subheadline:
+    '1:1 private coaching with a mindset coach in Wicklow for men who are ready to stop drifting',
   includes: [
     '12 × 60-minute 1:1 sessions via Zoom',
     'WhatsApp support between sessions',

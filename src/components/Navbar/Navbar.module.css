@@ -50,6 +50,11 @@
   color: var(--color-amber-warm);
 }
 
+.active {
+  color: var(--color-amber-warm);
+  border-bottom: 1px solid rgba(250, 199, 117, 0.7);
+}
+
 .cta {
   border: var(--border-amber);
   border-radius: var(--radius-full);

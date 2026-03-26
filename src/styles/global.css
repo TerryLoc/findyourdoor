@@ -3,8 +3,6 @@
    Design System & CSS Variables
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
-
 :root {
   --color-earth: #1c1410;
   --color-earth-mid: #2a1f15;
@@ -112,6 +110,21 @@ button {
   border: none;
   background: none;
   font-family: var(--font-body);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: var(--space-3);
+  z-index: 1200;
+  background: var(--color-amber);
+  color: var(--color-earth);
+  padding: 0.55rem 0.9rem;
+  border-radius: var(--radius-md);
+}
+
+.skip-link:focus {
+  left: var(--space-3);
 }
 
 ::selection {

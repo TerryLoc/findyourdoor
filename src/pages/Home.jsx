@@ -36,14 +36,16 @@ function Home() {
         structuredData={homeSchema}
       />
       <Navbar />
-      <Hero />
-      <About />
-      <ForYou />
-      <Philosophy />
-      <Offer />
-      <Testimonials />
-      <BookCall />
-      <Contact />
+      <main id="main-content" role="main">
+        <Hero />
+        <About />
+        <ForYou />
+        <Philosophy />
+        <Offer />
+        <Testimonials />
+        <BookCall />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );

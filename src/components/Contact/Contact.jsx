@@ -8,11 +8,22 @@ function Contact() {
   const [isSending, setIsSending] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
+  const [message, setMessage] = useState('');
+
+  const messageLimit = 1000;
+  const errorId = 'contact-form-error';
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setError('');
     setIsSending(true);
+
+    const formData = new FormData(formRef.current);
+    const honey = formData.get('_honey');
+    if (honey) {
+      setIsSending(false);
+      return;
+    }
 
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -45,19 +56,62 @@ function Contact() {
             <p className={styles.success}>Thank you. I will get back to you shortly.</p>
           ) : (
             <form className={styles.form} ref={formRef} onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="_honey"
+                tabIndex={-1}
+                autoComplete="off"
+                className={styles.honeypot}
+                aria-hidden="true"
+              />
+
               <label htmlFor="name">Name</label>
-              <input id="name" name="name" type="text" required />
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                aria-required="true"
+                aria-describedby={error ? errorId : undefined}
+              />
 
               <label htmlFor="email">Email</label>
-              <input id="email" name="email" type="email" required />
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                aria-required="true"
+                aria-describedby={error ? errorId : undefined}
+              />
 
               <label htmlFor="message">Message</label>
-              <textarea id="message" name="message" rows="5" required />
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                maxLength={messageLimit}
+                aria-required="true"
+                aria-describedby={`${error ? `${errorId} ` : ''}message-counter`.trim()}
+                value={message}
+                onChange={(event) => setMessage(event.target.value)}
+              />
+              <p id="message-counter" className={styles.counter}>
+                {message.length}/{messageLimit}
+              </p>
 
               <button type="submit" disabled={isSending}>
-                {isSending ? 'Sending...' : 'Send message'}
+                <span className={styles.buttonContent}>
+                  {isSending && <span className={styles.spinner} aria-hidden="true" />}
+                  {isSending ? 'Sending...' : 'Send message'}
+                </span>
               </button>
-              {error && <p className={styles.error}>{error}</p>}
+              {error && (
+                <p id={errorId} className={styles.error} role="alert">
+                  {error}
+                </p>
+              )}
             </form>
           )}
         </div>

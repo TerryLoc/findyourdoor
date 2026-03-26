@@ -8,6 +8,7 @@ function Navbar() {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -16,6 +17,52 @@ function Navbar() {
 
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    if (location.pathname !== '/') {
+      setActiveSection('');
+      return;
+    }
+
+    const sectionIds = NAV_LINKS.map((link) => link.href.replace('#', ''));
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visible[0]) {
+          setActiveSection(`#${visible[0].target.id}`);
+        }
+      },
+      {
+        rootMargin: '-35% 0px -50% 0px',
+        threshold: [0.2, 0.4, 0.6],
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, [location.pathname]);
+
+  const handleNavClick = (event, linkHref) => {
+    setMenuOpen(false);
+
+    if (location.pathname !== '/' || !linkHref.startsWith('#')) return;
+
+    const target = document.querySelector(linkHref);
+    if (!target) return;
+
+    event.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setActiveSection(linkHref);
+  };
 
   return (
     <motion.header
@@ -38,7 +85,7 @@ function Navbar() {
             type="button"
             className={styles.hamburger}
             onClick={() => setMenuOpen((prev) => !prev)}
-            aria-label="Toggle menu"
+            aria-label="Toggle navigation"
             aria-expanded={menuOpen}
           >
             <span />
@@ -46,16 +93,22 @@ function Navbar() {
           </button>
 
           <nav className={`${styles.nav} ${menuOpen ? styles.open : ''}`}>
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={location.pathname === '/' ? link.href : `/${link.href}`}
-                className={link.cta ? styles.cta : styles.link}
-                onClick={() => setMenuOpen(false)}
-              >
-                {link.label}
-              </a>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const href = location.pathname === '/' ? link.href : `/${link.href}`;
+              const isActive = !link.cta && location.pathname === '/' && activeSection === link.href;
+
+              return (
+                <a
+                  key={link.label}
+                  href={href}
+                  className={`${link.cta ? styles.cta : styles.link} ${isActive ? styles.active : ''}`}
+                  aria-current={isActive ? 'page' : undefined}
+                  onClick={(event) => handleNavClick(event, link.href)}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
           </nav>
         </div>
       </div>

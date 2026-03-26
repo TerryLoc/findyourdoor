@@ -24,6 +24,11 @@
   gap: var(--space-4);
 }
 
+.honeypot {
+  position: absolute;
+  left: -9999px;
+}
+
 .form label {
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -60,8 +65,30 @@
   font-size: var(--text-sm);
 }
 
+.buttonContent {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(28, 20, 16, 0.28);
+  border-top-color: var(--color-earth);
+  border-radius: 999px;
+  animation: spin 0.8s linear infinite;
+}
+
 .form button:disabled {
   opacity: 0.7;
+}
+
+.counter {
+  justify-self: end;
+  margin-top: calc(var(--space-3) * -1);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
 }
 
 .success {
@@ -76,4 +103,10 @@
   margin-top: var(--space-2);
   color: #ad3c3c;
   font-size: var(--text-sm);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

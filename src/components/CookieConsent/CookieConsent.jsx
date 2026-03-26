@@ -78,7 +78,7 @@ function CookieConsent() {
         <p className={styles.body}>
           We use essential cookies to keep this site secure and working. Optional analytics and marketing
           cookies are off by default and only used if you consent. Read our <Link to="/cookie-policy">Cookie Policy</Link>{' '}
-          and <Link to="/privacy-policy">Privacy Policy</Link>.
+          and <Link to="/privacy">Privacy Policy</Link>.
         </p>
 
         {showCustomize && (
