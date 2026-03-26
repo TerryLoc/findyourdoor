@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import terryPhoto from '@/assets/hero.png';
+import terryPhoto from '@/assets/images/hero.jpeg';
 import { ABOUT } from '@/constants/content';
 import styles from './About.module.css';
 

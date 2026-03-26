@@ -4,7 +4,7 @@ export const SITE = {
   sub: "I'm just here to help you find your door.",
   domain: 'findyourdoor.ie',
   email: 'findyourdoor.ie@gmail.com',
-  calendly: 'https://calendly.com/YOUR_LINK_HERE',
+  calendly: 'https://calendly.com/findyourdoor/discovery-call',
   linkedin: 'https://linkedin.com/in/terryloughran',
   location: 'Wicklow, Ireland',
 };
