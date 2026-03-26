@@ -1,0 +1,59 @@
+.section {
+  background: var(--color-parchment-mid);
+}
+
+.content {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.decorativeQuote {
+  position: absolute;
+  top: -4.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 200px;
+  line-height: 1;
+  color: rgba(239, 159, 39, 0.1);
+  font-family: var(--font-display);
+  pointer-events: none;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-amber);
+  font-size: var(--text-sm);
+}
+
+.headline {
+  margin-top: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.author {
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.body {
+  margin-top: var(--space-8);
+  color: var(--color-text-mid);
+}
+
+.quote {
+  margin-top: var(--space-8);
+  border-left: 4px solid var(--color-amber);
+  padding-left: var(--space-5);
+  text-align: left;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-2xl);
+  line-height: 1.35;
+  color: var(--color-text-dark);
+}

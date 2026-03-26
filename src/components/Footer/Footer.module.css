@@ -1,0 +1,95 @@
+.footer {
+  background: var(--color-earth);
+  border-top: 1px solid var(--color-earth-light);
+  color: rgba(255, 255, 255, 0.75);
+  padding: var(--space-8) 0 var(--space-6);
+}
+
+.top {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+
+.brand span:first-child {
+  color: var(--color-amber);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.contact {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  font-size: var(--text-sm);
+}
+
+.contact a:first-child {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: inline-grid;
+  place-items: center;
+  font-size: var(--text-xs);
+}
+
+.copy {
+  margin-top: var(--space-8);
+  font-size: var(--text-sm);
+}
+
+.legalLinks {
+  margin-top: var(--space-5);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.legalLinks a,
+.legalLinks button {
+  opacity: 0.9;
+  transition: opacity var(--transition-fast);
+}
+
+.legalLinks button {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  color: inherit;
+}
+
+.legalLinks a:hover,
+.legalLinks button:hover {
+  opacity: 1;
+}
+
+.bottom {
+  margin-top: var(--space-1);
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.45);
+}
+
+@media (min-width: 1024px) {
+  .top {
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  .contact {
+    justify-self: end;
+  }
+}

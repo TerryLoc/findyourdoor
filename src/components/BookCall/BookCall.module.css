@@ -1,0 +1,70 @@
+.section {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(239, 159, 39, 0.13), transparent 52%),
+    var(--color-earth);
+  color: var(--color-white);
+}
+
+.content {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrowWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.line {
+  width: 44px;
+  height: 1px;
+  background: rgba(239, 159, 39, 0.4);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-amber);
+  font-size: var(--text-sm);
+}
+
+.headline {
+  margin-top: var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.body {
+  margin-top: var(--space-4);
+  color: var(--color-amber-warm);
+  max-width: 620px;
+  margin-inline: auto;
+}
+
+.cta {
+  margin-top: var(--space-8);
+  display: inline-flex;
+  padding: 1rem 1.8rem;
+  background: var(--color-amber);
+  color: var(--color-earth);
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: 0 0 0 rgba(239, 159, 39, 0.35);
+  transition: box-shadow var(--transition-base), transform var(--transition-fast);
+}
+
+.cta:hover {
+  box-shadow: 0 0 24px rgba(239, 159, 39, 0.32);
+  transform: translateY(-1px);
+}
+
+.email {
+  margin-top: var(--space-4);
+  display: block;
+  color: rgba(255, 255, 255, 0.75);
+}

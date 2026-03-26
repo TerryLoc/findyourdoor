@@ -1,0 +1,109 @@
+.navbar {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  background: transparent;
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.scrolled {
+  background: rgba(28, 20, 16, 0.94);
+  border-bottom: var(--border-subtle);
+  backdrop-filter: blur(8px);
+}
+
+.navInner {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.brand {
+  color: var(--color-amber);
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: 0.08em;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.link,
+.cta {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.86);
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--color-amber-warm);
+}
+
+.cta {
+  border: var(--border-amber);
+  border-radius: var(--radius-full);
+  padding: 0.5rem 1rem;
+  color: var(--color-amber-warm);
+}
+
+.cta:hover {
+  border-color: var(--color-amber);
+  color: var(--color-amber);
+}
+
+.hamburger {
+  width: 40px;
+  height: 40px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.hamburger span {
+  height: 1px;
+  background: var(--color-amber-warm);
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 76px;
+    right: var(--container-pad);
+    width: min(280px, calc(100% - (var(--container-pad) * 2)));
+    background: var(--color-earth-mid);
+    border: var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+    display: grid;
+    gap: var(--space-4);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition:
+      opacity var(--transition-base),
+      transform var(--transition-base);
+  }
+
+  .open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}

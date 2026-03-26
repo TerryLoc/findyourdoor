@@ -1,0 +1,49 @@
+.section {
+  background: var(--color-earth);
+  color: var(--color-white);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-amber);
+  font-size: var(--text-sm);
+}
+
+.headline {
+  margin-top: var(--space-3);
+  max-width: 760px;
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.grid {
+  margin-top: var(--space-10);
+  display: grid;
+  gap: var(--space-4);
+}
+
+.card {
+  background: var(--color-earth-mid);
+  border-left: 2px solid var(--color-amber);
+  padding: var(--space-6);
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-sm);
+}
+
+.closing {
+  margin-top: var(--space-8);
+  text-align: center;
+  color: var(--color-amber);
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-style: italic;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
