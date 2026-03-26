@@ -1,4 +1,5 @@
 import { Outlet, Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
 import CookieConsent from './components/CookieConsent/CookieConsent';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
@@ -18,6 +19,12 @@ function AppLayout() {
 }
 
 function App() {
+  useEffect(() => {
+    if (window.location.hash === '#hero') {
+      window.history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+    }
+  }, []);
+
   return (
     <>
       <a href="#main-content" className="skip-link">

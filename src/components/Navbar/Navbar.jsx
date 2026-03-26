@@ -67,6 +67,15 @@ function Navbar() {
     setActiveSection(linkHref);
   };
 
+  const handleBrandClick = (event) => {
+    if (location.pathname !== '/') return;
+
+    event.preventDefault();
+    setMenuOpen(false);
+    setActiveSection('');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <motion.header
       className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}
@@ -77,9 +86,10 @@ function Navbar() {
       <div className="container">
         <div className={styles.navInner}>
           <a
-            href={location.pathname === '/' ? '#hero' : '/#hero'}
+            href="/"
             className={styles.brand}
             aria-label="Find Your Door home"
+            onClick={handleBrandClick}
           >
             FYD
           </a>
