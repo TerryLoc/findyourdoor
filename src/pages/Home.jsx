@@ -1,4 +1,3 @@
-import Navbar from '@/components/Navbar/Navbar';
 import Hero from '@/components/Hero/Hero';
 import About from '@/components/About/About';
 import ForYou from '@/components/ForYou/ForYou';
@@ -7,7 +6,6 @@ import Offer from '@/components/Offer/Offer';
 import Testimonials from '@/components/Testimonials/Testimonials';
 import BookCall from '@/components/BookCall/BookCall';
 import Contact from '@/components/Contact/Contact';
-import Footer from '@/components/Footer/Footer';
 import SEO from '@/components/SEO/SEO';
 import styles from './Home.module.css';
 
@@ -35,7 +33,6 @@ function Home() {
         pathname="/"
         structuredData={homeSchema}
       />
-      <Navbar />
       <main id="main-content" role="main">
         <Hero />
         <About />
@@ -46,7 +43,6 @@ function Home() {
         <BookCall />
         <Contact />
       </main>
-      <Footer />
     </div>
   );
 }

@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar/Navbar';
-import Footer from '@/components/Footer/Footer';
 import SEO from '@/components/SEO/SEO';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import styles from './NotFound.module.css';
@@ -16,8 +14,6 @@ function NotFound() {
         pathname="/404"
         noIndex
       />
-
-      <Navbar />
 
       <main id="main-content" role="main" className={styles.main}>
         <div className="container">
@@ -39,8 +35,6 @@ function NotFound() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom';
-import Navbar from '@/components/Navbar/Navbar';
-import Footer from '@/components/Footer/Footer';
 import SEO from '@/components/SEO/SEO';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import styles from './LegalPage.module.css';
@@ -26,7 +24,6 @@ function CookiePolicy() {
         type="article"
         structuredData={schema}
       />
-      <Navbar />
 
       <main id="main-content" role="main" className={styles.main}>
         <div className="container">
@@ -91,8 +88,6 @@ function CookiePolicy() {
           </Link>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }
