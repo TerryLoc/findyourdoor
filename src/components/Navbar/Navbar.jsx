@@ -31,24 +31,27 @@ function Navbar() {
 
     if (!sections.length) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+    const updateActiveSection = () => {
+      const offset = 130;
+      let currentSection = sectionIds[0];
 
-        if (visible[0]) {
-          setActiveSection(`#${visible[0].target.id}`);
+      sections.forEach((section) => {
+        if (section.getBoundingClientRect().top - offset <= 0) {
+          currentSection = section.id;
         }
-      },
-      {
-        rootMargin: '-35% 0px -50% 0px',
-        threshold: [0.2, 0.4, 0.6],
-      }
-    );
+      });
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+      setActiveSection(`#${currentSection}`);
+    };
+
+    updateActiveSection();
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('resize', updateActiveSection);
+
+    return () => {
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
+    };
   }, [location.pathname]);
 
   const handleNavClick = (event, linkHref) => {
