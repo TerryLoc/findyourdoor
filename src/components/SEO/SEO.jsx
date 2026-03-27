@@ -70,6 +70,8 @@ function SEO({
     upsertMeta('property', 'og:description', description);
     upsertMeta('property', 'og:url', `${SITE_URL}${pathname}`);
     upsertMeta('property', 'og:image', imageUrl);
+    upsertMeta('property', 'og:image:secure_url', imageUrl);
+    upsertMeta('property', 'og:image:type', 'image/jpeg');
 
     upsertMeta('name', 'twitter:card', 'summary_large_image');
     upsertMeta('name', 'twitter:title', title);
