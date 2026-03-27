@@ -16,9 +16,6 @@ function BookCall() {
           <a href={SITE.calendly} className={styles.cta} target="_blank" rel="noreferrer">
             {BOOK.cta}
           </a>
-          <a href={`mailto:${SITE.email}`} className={styles.email}>
-            or email {SITE.email}
-          </a>
         </div>
       </div>
     </section>

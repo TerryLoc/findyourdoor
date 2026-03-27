@@ -83,6 +83,10 @@
 }
 
 @media (max-width: 767px) {
+  .brand {
+    font-size: 18px;
+  }
+
   .hamburger {
     display: flex;
   }

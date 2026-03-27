@@ -13,14 +13,14 @@
 
 .brand {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: var(--space-3);
 }
 
-.brand span:first-child {
-  color: var(--color-amber);
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
+.brandLogo {
+  width: clamp(65px, 7.5vw, 85px);
+  height: auto;
+  display: block;
 }
 
 .links {

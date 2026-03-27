@@ -1,5 +1,6 @@
 import { NAV_LINKS, SITE } from '@/constants/content';
 import { Link, useLocation } from 'react-router-dom';
+import primaryLogo from '@/assets/images/primary_logo.png';
 import styles from './Footer.module.css';
 
 function Footer() {
@@ -10,8 +11,7 @@ function Footer() {
       <div className="container">
         <div className={styles.top}>
           <div className={styles.brand}>
-            <span>FYD</span>
-            <span>{SITE.domain}</span>
+            <img src={primaryLogo} alt="Find Your Door logo" className={styles.brandLogo} />
           </div>
 
           <nav className={styles.links}>

@@ -10,7 +10,7 @@ function Testimonials() {
     <section className={styles.section} ref={ref}>
       <div className="container section-pad">
         <p className={styles.note}>
-          Placeholder testimonials below - replace with real client feedback as it comes in.
+          Testimonials can be powerful, but experience the coaching for yourself before hearing from others. If you have any questions or want to chat, feel free to reach out. I am here to help you find your door.
         </p>
         <div className={styles.grid}>
           {TESTIMONIALS.map((item, idx) => (
