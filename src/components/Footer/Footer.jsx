@@ -26,7 +26,7 @@ function Footer() {
             <a href={SITE.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
               in
             </a>
-            <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+            
           </div>
         </div>
 

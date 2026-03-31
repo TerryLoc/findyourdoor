@@ -74,8 +74,8 @@ function Contact() {
     <section id="contact" className={styles.section}>
       <div className="container section-pad">
         <div className={styles.wrap}>
-          <h2 className={styles.headline}>Send a message</h2>
-          <p className={styles.sub}>Prefer email directly? {SITE.email}</p>
+          <h2 className={styles.headline}>Get in touch</h2>
+          <p className={styles.sub}>Send Terry a message and he will get back to you as soon as possible.</p>
 
           {success ? (
             <div className={styles.success}>
