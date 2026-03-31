@@ -79,9 +79,16 @@ function Contact() {
 
           {success ? (
             <div className={styles.success}>
-              <h3>Message received.</h3>
-              <p>Thank you for reaching out. I'll be back to you personally within 24 hours.</p>
-              <p>Or if you'd prefer — <a href="https://calendly.com/findyourdoor/discovery-call">book a free call directly</a>.</p>
+              <p className={styles.successBadge}>Message received</p>
+              <h3>Thank you for reaching out.</h3>
+              <p>I'll reply to you personally within 24 hours.</p>
+              <div className={styles.successActions}>
+                <a className={styles.successPrimaryLink} href="https://calendly.com/findyourdoor/discovery-call">
+                  Book a free call
+                </a>
+                
+              </div>
+              <p className={styles.successNote}>Prefer to move faster? Grab a time that suits you and we can talk personally.</p>
             </div>
           ) : (
             <form className={styles.form} onSubmit={handleSubmit}>

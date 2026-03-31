@@ -92,8 +92,13 @@
 }
 
 .success {
+  margin-top: var(--space-8);
   text-align: center;
-  padding: 48px 24px;
+  padding: 40px 28px;
+  border: 1px solid #e7dece;
+  border-radius: 18px;
+  background: linear-gradient(140deg, #fbf8f2 0%, #f6f1e6 100%);
+  box-shadow: 0 10px 26px rgba(28, 20, 16, 0.08);
 }
 
 .success h3 {
@@ -101,20 +106,67 @@
   font-size: var(--text-3xl);
   font-weight: 300;
   color: var(--color-text-dark);
-  margin-bottom: 16px;
+  margin: 0 0 12px;
 }
 
 .success p {
   font-size: var(--text-base);
   color: var(--color-text-mid);
   line-height: 1.7;
-  margin-bottom: 12px;
+  margin: 0;
 }
 
-.success a {
+.successBadge {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(239, 159, 39, 0.16);
+  color: #7f5515;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.successActions {
+  margin-top: 26px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.successPrimaryLink {
+  display: inline-block;
+  background: var(--color-amber);
+  color: var(--color-earth);
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+
+.successSecondaryLink {
+  display: inline-block;
   color: var(--color-amber);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(239, 159, 39, 0.5);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+
+.successNote {
+  margin-top: 16px !important;
+  font-size: var(--text-sm) !important;
+  color: var(--color-text-muted) !important;
 }
 
 .error {
@@ -127,5 +179,27 @@
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 640px) {
+  .success {
+    padding: 30px 18px;
+  }
+
+  .success h3 {
+    font-size: var(--text-2xl);
+  }
+
+  .successActions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .successPrimaryLink,
+  .successSecondaryLink {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
   }
 }
