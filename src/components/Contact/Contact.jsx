@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 import { SITE } from '@/constants/content';
 import styles from './Contact.module.css';
 
 function Contact() {
+  const submitLockRef = useRef(false);
   const [sending, setSending] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
@@ -19,12 +20,14 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
 
     // Honeypot check — if bot filled this field, silently return
     if (formData._honey) return;
 
     // Prevent double submission
-    if (sending) return;
+    if (sending || submitLockRef.current) return;
+    submitLockRef.current = true;
     setSending(true);
 
     const templateData = {
@@ -67,6 +70,7 @@ function Contact() {
       setError('Something went wrong. Please email us directly at findyourdoor.ie@gmail.com');
     } finally {
       setSending(false);
+      submitLockRef.current = false;
     }
   };
 
