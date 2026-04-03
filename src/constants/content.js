@@ -81,21 +81,15 @@ export const OFFER = {
 export const TESTIMONIALS = [
   {
     quote:
-      "Terry doesn't tell you what to do. He helps you hear yourself clearly for the first time in years.",
-    name: 'Client, Dublin',
-    detail: '42, business owner',
+      'I have worked alongside Terry and seen first-hand the kind of man he is. What stands out is his integrity. He does not cut corners, he does not perform for an audience — he simply shows up and gives everything he has. When Terry is in your corner he is genuinely in your corner. He communicates with honesty, he listens properly and he has a way of making the people around him better. If you are looking for someone who will be straight with you, work hard for you and actually care about where you end up — Terry is exactly that person.',
+    name: 'Mark Brady',
+    detail: 'Store Manager, Aldi',
   },
   {
     quote:
-      'I came in thinking I needed career advice. I left knowing it was never about the career.',
-    name: 'Client, Wicklow',
-    detail: '38, professional',
-  },
-  {
-    quote:
-      "The first honest conversation I'd had about my life in a very long time.",
-    name: 'Client, Cork',
-    detail: '45, father of three',
+      'I have had the privilege of working with Terry across a number of demanding projects and what I can say without hesitation is that he is one of the most reliable and adaptable people I have encountered. When things get difficult Terry does not retreat — he steps up. He listens carefully, he takes direction well and he goes above and beyond not because he has to but because that is simply who he is. His attitude is consistently positive and his commitment to the people around him is genuine. Anyone who gets to work with Terry is fortunate.',
+    name: 'Lemme Black',
+    detail: 'Black Art Stunts Ltd, Belfast',
   },
 ];
 
