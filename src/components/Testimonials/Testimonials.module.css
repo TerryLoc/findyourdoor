@@ -2,15 +2,37 @@
   background: var(--color-parchment);
 }
 
+.content {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.decorativeQuote {
+  position: absolute;
+  top: -4.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 200px;
+  line-height: 1;
+  color: rgba(239, 159, 39, 0.1);
+  font-family: var(--font-display);
+  pointer-events: none;
+}
+
 .note {
-  color: var(--color-text-muted);
   margin-bottom: var(--space-6);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-amber);
   font-size: var(--text-sm);
 }
 
 .grid {
   display: grid;
   gap: var(--space-6);
+  position: relative;
 }
 
 .card {
@@ -18,6 +40,7 @@
   border-radius: var(--radius-lg);
   padding: var(--space-8);
   box-shadow: var(--shadow-md);
+  text-align: center;
 }
 
 .mark {

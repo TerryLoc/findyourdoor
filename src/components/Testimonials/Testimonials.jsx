@@ -9,24 +9,27 @@ function Testimonials() {
   return (
     <section className={styles.section} ref={ref}>
       <div className="container section-pad">
-        <p className={styles.note} style={{ fontWeight: 700, fontSize: '1.15rem' }}>
-          Testimonials: If you have any questions or want to chat, feel free to reach out. I am here to help you find your door.
-        </p>
-        <div className={styles.grid}>
-          {TESTIMONIALS.map((item, idx) => (
-            <motion.article
-              key={item.quote}
-              className={styles.card}
-              initial={{ opacity: 0, y: 24 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.55, delay: idx * 0.12 }}
-            >
-              <span className={styles.mark}>“</span>
-              <p className={styles.quote}>{item.quote}</p>
-              <p className={styles.name}>{item.name}</p>
-              <p className={styles.detail}>{item.detail}</p>
-            </motion.article>
-          ))}
+        <div className={styles.content}>
+          <span className={styles.decorativeQuote} aria-hidden="true">
+            “
+          </span>
+          <p className={styles.note}>Testimonials</p>
+          <div className={styles.grid}>
+            {TESTIMONIALS.map((item, idx) => (
+              <motion.article
+                key={item.quote}
+                className={styles.card}
+                initial={{ opacity: 0, y: 24 }}
+                animate={isVisible ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.55, delay: idx * 0.12 }}
+              >
+                <span className={styles.mark}>“</span>
+                <p className={styles.quote}>{item.quote}</p>
+                <p className={styles.name}>{item.name}</p>
+                <p className={styles.detail}>{item.detail}</p>
+              </motion.article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
