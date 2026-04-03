@@ -9,8 +9,8 @@ function Testimonials() {
   return (
     <section className={styles.section} ref={ref}>
       <div className="container section-pad">
-        <p className={styles.note}>
-          <bold>Testimonials: </bold> If you have any questions or want to chat, feel free to reach out. I am here to help you find your door.
+        <p className={styles.note} style={{ fontWeight: 700, fontSize: '1.15rem' }}>
+          Testimonials: If you have any questions or want to chat, feel free to reach out. I am here to help you find your door.
         </p>
         <div className={styles.grid}>
           {TESTIMONIALS.map((item, idx) => (
