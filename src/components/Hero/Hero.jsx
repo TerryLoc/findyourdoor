@@ -42,7 +42,7 @@ function Hero() {
             <a
               className={styles.primaryCta}
               href="#book"
-              aria-label="Book a free 30-minute coaching call"
+              aria-label="Book a free 20-minute coaching call"
               onClick={(event) => scrollToSection(event, '#book')}
             >
               {HERO.cta}

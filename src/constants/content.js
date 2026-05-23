@@ -21,7 +21,7 @@ export const HERO = {
   headline: 'The choice is\nalways yours.',
   subheadline: "I'm just here to help you find your door.",
   body: "Working with men in their 30s & 40s who feel stuck, flat, or like they've quietly lost themselves.",
-  cta: 'Book a free 30-minute call',
+  cta: 'Book a free 20-minute call',
   ctaSecondary: 'Read my story',
 };
 
@@ -95,7 +95,7 @@ export const TESTIMONIALS = [
 
 export const BOOK = {
   eyebrow: 'First step',
-  headline: 'Book a free 30-minute call',
+  headline: 'Book a free 20-minute call',
   body: "No pitch. No pressure. Just an honest conversation to see if working together makes sense. If it doesn't, you'll still leave with something useful.",
   cta: 'Book your call now',
 };
