@@ -38,9 +38,9 @@ function Home() {
         <About />
         <ForYou />
         <Philosophy />
-        <Offer />
-        <Testimonials />
         <BookCall />
+        <Testimonials />
+        <Offer />
         <Contact />
       </main>
     </div>
