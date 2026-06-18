@@ -13,6 +13,10 @@ export const NAV_LINKS = [
   { label: 'About', href: '#about' },
   { label: 'Is this for me?', href: '#for-you' },
   { label: 'Work with me', href: '#offer' },
+  {
+    label: 'Worry Reset',
+    href: '/services/the-worry-reset-programme/',
+  },
   { label: 'Book a call', href: '#book', cta: true },
 ];
 

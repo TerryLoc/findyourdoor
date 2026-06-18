@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Privacy from './pages/Privacy';
 import CookiePolicy from './pages/CookiePolicy';
 import NotFound from './pages/NotFound';
+import WorryResetProgramme from './pages/WorryResetProgramme';
 
 function AppLayout() {
   return (
@@ -20,7 +21,15 @@ function AppLayout() {
 
 function App() {
   useEffect(() => {
-    const cleanHashes = ['#hero', '#about', '#for-you', '#offer', '#book', '#contact', '#philosophy'];
+    const cleanHashes = [
+      '#hero',
+      '#about',
+      '#for-you',
+      '#offer',
+      '#book',
+      '#contact',
+      '#philosophy',
+    ];
     const { hash, pathname, search } = window.location;
 
     if (!cleanHashes.includes(hash)) return;
@@ -41,6 +50,10 @@ function App() {
       <Routes>
         <Route element={<AppLayout />}>
           <Route path="/" element={<Home />} />
+          <Route
+            path="/services/the-worry-reset-programme/"
+            element={<WorryResetProgramme />}
+          />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />

@@ -4,6 +4,9 @@ import { useLocation } from 'react-router-dom';
 import { NAV_LINKS } from '@/constants/content';
 import styles from './Navbar.module.css';
 
+const isHashLink = (href) => href.startsWith('#');
+const normalizePath = (path) => path.replace(/\/$/, '') || '/';
+
 function Navbar() {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
@@ -24,7 +27,9 @@ function Navbar() {
       return;
     }
 
-    const sectionIds = NAV_LINKS.map((link) => link.href.replace('#', ''));
+    const sectionIds = NAV_LINKS.filter((link) => isHashLink(link.href)).map(
+      (link) => link.href.replace('#', '')
+    );
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean);
@@ -57,7 +62,7 @@ function Navbar() {
   const handleNavClick = (event, linkHref) => {
     setMenuOpen(false);
 
-    if (location.pathname !== '/' || !linkHref.startsWith('#')) return;
+    if (!isHashLink(linkHref) || location.pathname !== '/') return;
 
     const target = document.querySelector(linkHref);
     if (!target) return;
@@ -107,8 +112,16 @@ function Navbar() {
 
           <nav className={`${styles.nav} ${menuOpen ? styles.open : ''}`}>
             {NAV_LINKS.map((link) => {
-              const href = location.pathname === '/' ? link.href : `/${link.href}`;
-              const isActive = !link.cta && location.pathname === '/' && activeSection === link.href;
+              const href =
+                isHashLink(link.href) && location.pathname !== '/'
+                  ? `/${link.href}`
+                  : link.href;
+              const isActive =
+                !link.cta &&
+                (isHashLink(link.href)
+                  ? location.pathname === '/' && activeSection === link.href
+                  : normalizePath(location.pathname) ===
+                    normalizePath(link.href));
 
               return (
                 <a

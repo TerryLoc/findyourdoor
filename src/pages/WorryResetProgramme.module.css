@@ -1,0 +1,480 @@
+.page {
+  min-height: 100vh;
+  background: var(--color-parchment);
+  color: var(--color-text-dark);
+}
+
+.hero {
+  min-height: 94vh;
+  display: grid;
+  align-items: center;
+  padding: 120px 0 var(--space-20);
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(239, 159, 39, 0.13),
+      transparent 54%
+    ),
+    var(--color-earth);
+  color: var(--color-white);
+}
+
+.heroContent,
+.centerBlock,
+.choiceBlock,
+.programmeIntro,
+.finalCta {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  color: var(--color-amber);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+}
+
+.hero h1,
+.centerBlock h2,
+.choiceBlock h2,
+.programmeIntro h2,
+.worksheetContent h2,
+.aboutGrid h2,
+.finalCta h2 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  line-height: 1.08;
+}
+
+.hero h1 {
+  margin-top: var(--space-4);
+  font-size: clamp(3.2rem, 8vw, 6rem);
+}
+
+.subheadline {
+  max-width: 680px;
+  margin: var(--space-6) auto 0;
+  color: var(--color-amber-warm);
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  line-height: 1.45;
+}
+
+.heroBody,
+.centerBlock p,
+.programmeIntro p,
+.worksheetContent p,
+.aboutGrid p,
+.finalCta p {
+  color: var(--color-text-mid);
+}
+
+.heroBody {
+  max-width: 620px;
+  margin: var(--space-5) auto 0;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.actions {
+  margin-top: var(--space-8);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  padding: 0.82rem 1.2rem;
+  font-size: var(--text-sm);
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.primaryButton {
+  background: var(--color-amber);
+  color: var(--color-earth);
+}
+
+.secondaryButton {
+  border: var(--border-amber);
+  color: var(--color-amber-warm);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-1px);
+}
+
+.heroCover {
+  width: min(310px, 72vw);
+  margin: var(--space-14, 3.5rem) auto 0;
+}
+
+.heroCover img,
+.worksheetCover img {
+  width: 100%;
+  border: 1px solid rgba(250, 199, 117, 0.28);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  box-shadow: var(--shadow-lg);
+}
+
+.recognition,
+.worksheetSection,
+.aboutSection {
+  background: var(--color-parchment);
+}
+
+.centerBlock h2,
+.programmeIntro h2,
+.worksheetContent h2,
+.aboutGrid h2 {
+  margin-top: var(--space-3);
+  font-size: clamp(2.25rem, 4vw, 3.75rem);
+}
+
+.centerBlock p,
+.programmeIntro p,
+.worksheetContent p,
+.aboutGrid p,
+.finalCta p {
+  max-width: 680px;
+  margin: var(--space-5) auto 0;
+}
+
+.recognitionList {
+  max-width: 860px;
+  margin: var(--space-10) auto 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.recognitionList p {
+  border-top: 1px solid var(--color-parchment-mid);
+  padding: var(--space-4) 0;
+  color: var(--color-text-mid);
+  text-align: center;
+}
+
+.choiceSection,
+.finalCta,
+.disclaimer {
+  background: var(--color-earth);
+  color: var(--color-white);
+}
+
+.choiceBlock p {
+  margin: var(--space-5) auto 0;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.choiceBlock h2 {
+  margin-top: var(--space-3);
+  font-size: clamp(2.2rem, 4vw, 3.75rem);
+}
+
+.choiceBlock blockquote {
+  margin: var(--space-8) auto 0;
+  max-width: 740px;
+  color: var(--color-amber-warm);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-style: italic;
+  line-height: 1.08;
+}
+
+.decision {
+  color: var(--color-white) !important;
+  font-size: var(--text-xl);
+}
+
+.programmeSection {
+  background: var(--color-parchment-mid);
+}
+
+.programmeGrid,
+.worksheetGrid,
+.aboutGrid {
+  margin-top: var(--space-10);
+  display: grid;
+  gap: var(--space-10);
+  align-items: start;
+}
+
+.methodPanel,
+.weekList article,
+.fitBox {
+  border: 1px solid rgba(28, 20, 16, 0.1);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.methodPanel {
+  padding: var(--space-8);
+}
+
+.methodPanel h3,
+.weekList h3,
+.fitBox h3 {
+  color: var(--color-text-dark);
+  font-size: var(--text-lg);
+  font-weight: 500;
+}
+
+.methodPanel > p {
+  margin-top: var(--space-3);
+  color: var(--color-text-mid);
+}
+
+.methodList {
+  margin-top: var(--space-6);
+  display: grid;
+  gap: var(--space-5);
+}
+
+.methodList article {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: var(--space-4);
+}
+
+.methodList span {
+  width: 42px;
+  height: 42px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: var(--radius-full);
+  background: var(--color-earth);
+  color: var(--color-amber);
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+}
+
+.methodList h4 {
+  color: var(--color-text-dark);
+  font-size: var(--text-base);
+  font-weight: 600;
+}
+
+.methodList p,
+.weekList p,
+.fitBox li {
+  margin-top: var(--space-1);
+  color: var(--color-text-mid);
+}
+
+.weekList {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.weekList article {
+  padding: var(--space-5);
+}
+
+.weekList span {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: var(--color-amber);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.includedList {
+  max-width: 900px;
+  margin: var(--space-10) auto 0;
+  padding-top: var(--space-6);
+  border-top: 1px solid rgba(28, 20, 16, 0.12);
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3) var(--space-5);
+}
+
+.includedList li {
+  color: var(--color-text-mid);
+}
+
+.includedList li::before {
+  content: '/';
+  margin-right: var(--space-2);
+  color: var(--color-amber);
+}
+
+.worksheetGrid {
+  align-items: center;
+}
+
+.worksheetCover {
+  width: min(360px, 100%);
+  margin: 0 auto;
+}
+
+.worksheetForm {
+  margin-top: var(--space-6);
+  max-width: 520px;
+  display: grid;
+  gap: var(--space-4);
+}
+
+.fieldGroup {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.worksheetForm label {
+  color: var(--color-amber);
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.worksheetForm input {
+  min-height: 52px;
+  border: 0;
+  border-bottom: 1px solid var(--color-earth);
+  background: rgba(255, 255, 255, 0.72);
+  padding: 0 var(--space-3);
+  color: var(--color-text-dark);
+  font: inherit;
+}
+
+.worksheetForm button {
+  min-height: 50px;
+  border-radius: var(--radius-full);
+  background: var(--color-amber);
+  color: var(--color-earth);
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.formNote,
+.quietLine {
+  color: var(--color-text-muted) !important;
+  font-size: var(--text-sm);
+}
+
+.formSuccess {
+  margin-top: var(--space-6);
+  max-width: 520px;
+  border: 1px solid rgba(239, 159, 39, 0.35);
+  border-radius: var(--radius-md);
+  background: rgba(239, 159, 39, 0.12);
+  padding: var(--space-5);
+}
+
+.formSuccess p {
+  margin: 0;
+  color: var(--color-text-dark);
+  font-weight: 600;
+}
+
+.formSuccess span {
+  display: block;
+  margin-top: var(--space-2);
+  color: var(--color-text-mid);
+}
+
+.aboutSection {
+  border-top: 1px solid var(--color-parchment-mid);
+}
+
+.aboutGrid img {
+  width: min(260px, 100%);
+  max-height: 500px;
+  justify-self: center;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.fitBox {
+  margin-top: var(--space-7, 1.75rem);
+  padding: var(--space-6);
+}
+
+.fitBox ul {
+  margin-top: var(--space-4);
+  list-style: none;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.fitBox li::before {
+  content: '✓';
+  margin-right: var(--space-2);
+  color: var(--color-amber);
+}
+
+.finalCta {
+  padding: var(--space-24) 0;
+}
+
+.finalCta h2 {
+  margin-top: var(--space-3);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+}
+
+.finalCta p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.disclaimer {
+  padding: var(--space-8) 0;
+  border-top: var(--border-subtle);
+}
+
+.disclaimer p {
+  max-width: 900px;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: var(--text-sm);
+}
+
+@media (min-width: 820px) {
+  .programmeGrid,
+  .worksheetGrid,
+  .aboutGrid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .worksheetContent {
+    max-width: 620px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    min-height: auto;
+    padding-top: 112px;
+  }
+
+  .actions {
+    align-items: stretch;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+  .methodPanel {
+    padding: var(--space-6);
+  }
+}
