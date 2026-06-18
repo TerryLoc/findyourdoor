@@ -84,7 +84,7 @@ const fitItems = [
 
 const notFitItems = [
   'You are looking for a quick fix',
-  'You want someone else to make your choices for you',
+  'You are looking for someone else to make the choice for you',
   'You need therapy, clinical treatment, or urgent support',
   'You are not willing to pause and reflect honestly',
 ];
@@ -179,7 +179,7 @@ function WorryResetProgramme() {
               <p className={styles.eyebrow}>A Find Your Door Programme</p>
               <h1>The Worry Reset Programme</h1>
               <p className={styles.subheadline}>
-                A calm four-week programme for men caught in worry,
+                A calm, self-paced four-week programme for men caught in worry,
                 overthinking, avoidance, and feeling stuck.
               </p>
               <p className={styles.heroBody}>
@@ -222,7 +222,7 @@ function WorryResetProgramme() {
         <section className={styles.recognition}>
           <div className="container section-pad">
             <div className={styles.centerBlock}>
-              <p className={styles.eyebrow}>Recognition</p>
+              <p className={styles.eyebrow}>If this feels familiar</p>
               <h2>When worry starts shaping your life</h2>
               <p>
                 Worry does not always look like panic. Sometimes it looks like
@@ -244,7 +244,7 @@ function WorryResetProgramme() {
             <div className={styles.choiceBlock}>
               <p className={styles.eyebrow}>Choice Theory</p>
               <h2>
-                You are never without choice - even when it feels that way
+                You are never without choice — even when it feels that way
               </h2>
               <p>
                 Worry can make life feel narrow. It can convince you there are
@@ -286,6 +286,14 @@ function WorryResetProgramme() {
               aria-label="Promo video coming soon"
             >
               <span>Promo video coming soon</span>
+            </div>
+            <div className={styles.videoAction}>
+              <p>
+                Watch the short message, then start with the free worksheet.
+              </p>
+              <ButtonLink href="#worksheet">
+                Download the Free Worksheet
+              </ButtonLink>
             </div>
           </div>
         </section>
@@ -394,8 +402,8 @@ function WorryResetProgramme() {
                 </p>
                 <p>
                   This programme was created to give men a calm, practical way
-                  to face worry, understand the pattern, and reclaim one small
-                  piece of ground.
+                  to face worry, understand the pattern, and take one honest
+                  step towards the next door.
                 </p>
 
                 <div className={styles.fitBox}>
@@ -408,7 +416,7 @@ function WorryResetProgramme() {
                 </div>
 
                 <div className={styles.fitBox}>
-                  <h3>This may not be for you if:</h3>
+                  <h3>This may not be the right fit if:</h3>
                   <ul>
                     {notFitItems.map((item) => (
                       <li key={item}>{item}</li>
@@ -429,14 +437,18 @@ function WorryResetProgramme() {
               step.
             </p>
             <div className={styles.actions}>
-              <ButtonLink href={joinHref}>
-                Join The Worry Reset Programme
-              </ButtonLink>
-              <ButtonLink href="#worksheet" variant="secondary">
+              <ButtonLink href="#worksheet">
                 Download the Free Worksheet
               </ButtonLink>
+              <ButtonLink href={joinHref} variant="secondary">
+                Ask About The Worry Reset Programme
+              </ButtonLink>
             </div>
+          </div>
+        </section>
 
+        <section className={styles.disclaimerSection}>
+          <div className="container">
             <aside
               className={styles.disclaimer}
               aria-label="Important programme note"
