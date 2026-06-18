@@ -22,40 +22,67 @@ function Hero() {
       <div className={styles.grain} aria-hidden="true" />
       <div className={styles.glow} aria-hidden="true" />
       <div className="container">
-        <div className={styles.content}>
-          <div className={styles.accent} aria-hidden="true" />
-          <motion.p className={styles.eyebrow} {...item(0.1)}>
-            {HERO.eyebrow}
-          </motion.p>
-          <motion.h1 className={styles.headline} {...item(0.25)}>
-            The choice is
-            <br />
-            <em>always</em> yours.
-          </motion.h1>
-          <motion.p className={styles.subheadline} {...item(0.4)}>
-            {HERO.subheadline}
-          </motion.p>
-          <motion.p className={styles.body} {...item(0.55)}>
-            {HERO.body}
-          </motion.p>
-          <motion.div className={styles.actions} {...item(0.7)}>
-            <a
-              className={styles.primaryCta}
-              href="#book"
-              aria-label="Book a free 20-minute coaching call"
-              onClick={(event) => scrollToSection(event, '#book')}
-            >
-              {HERO.cta}
-            </a>
-            <a
-              className={styles.secondaryCta}
-              href="#about"
-              aria-label="Read Terry's story"
-              onClick={(event) => scrollToSection(event, '#about')}
-            >
-              {HERO.ctaSecondary}
-            </a>
-          </motion.div>
+        <div className={styles.heroInner}>
+          <div className={styles.content}>
+            <div className={styles.accent} aria-hidden="true" />
+            <motion.p className={styles.eyebrow} {...item(0.1)}>
+              {HERO.eyebrow}
+            </motion.p>
+            <motion.h1 className={styles.headline} {...item(0.25)}>
+              The choice is
+              <br />
+              <em>always</em> yours.
+            </motion.h1>
+            <motion.p className={styles.subheadline} {...item(0.4)}>
+              {HERO.subheadline}
+            </motion.p>
+            <motion.p className={styles.body} {...item(0.55)}>
+              {HERO.body}
+            </motion.p>
+            <motion.div className={styles.actions} {...item(0.7)}>
+              <a
+                className={styles.primaryCta}
+                href="#book"
+                aria-label="Book a free 20-minute coaching call"
+                onClick={(event) => scrollToSection(event, '#book')}
+              >
+                {HERO.cta}
+              </a>
+              <a
+                className={styles.secondaryCta}
+                href="#about"
+                aria-label="Read Terry's story"
+                onClick={(event) => scrollToSection(event, '#about')}
+              >
+                {HERO.ctaSecondary}
+              </a>
+            </motion.div>
+          </div>
+
+          <motion.aside className={styles.resetPanel} {...item(0.85)}>
+            <img
+              src="/10min%20WRW%20p1.png"
+              alt="The 10-Minute Worry Reset Worksheet"
+              className={styles.resetCover}
+            />
+            <div className={styles.resetCopy}>
+              <p className={styles.resetKicker}>Free starting point</p>
+              <h2>The Worry Reset Programme</h2>
+              <p>
+                Start with the free 10-Minute Worry Reset Worksheet. If it
+                helps, there is a calm self-paced four-week programme waiting
+                behind it.
+              </p>
+              <div className={styles.resetActions}>
+                <a href="/services/the-worry-reset-programme/#worksheet">
+                  Get the free worksheet
+                </a>
+                <a href="/services/the-worry-reset-programme/">
+                  Learn about the programme
+                </a>
+              </div>
+            </div>
+          </motion.aside>
         </div>
       </div>
       <motion.a

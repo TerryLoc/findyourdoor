@@ -47,6 +47,13 @@
   animation: ambientPulse 5s ease-in-out infinite;
 }
 
+.heroInner {
+  position: relative;
+  display: grid;
+  gap: var(--space-10);
+  align-items: center;
+}
+
 .content {
   position: relative;
   max-width: 760px;
@@ -135,6 +142,77 @@
   border-color: var(--color-amber-warm);
 }
 
+.resetPanel {
+  position: relative;
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: var(--space-5);
+  align-items: center;
+  max-width: 500px;
+  padding: var(--space-5);
+  border: 1px solid rgba(239, 159, 39, 0.28);
+  border-radius: var(--radius-md);
+  background: rgba(28, 20, 16, 0.72);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.resetCover {
+  width: 92px;
+  aspect-ratio: 1055 / 1491;
+  object-fit: cover;
+  border: 1px solid rgba(250, 199, 117, 0.24);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+}
+
+.resetKicker {
+  color: var(--color-amber);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.resetCopy h2 {
+  margin-top: var(--space-2);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.resetCopy > p:not(.resetKicker) {
+  margin-top: var(--space-3);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+.resetActions {
+  margin-top: var(--space-4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.resetActions a {
+  color: var(--color-amber-warm);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid rgba(250, 199, 117, 0.35);
+  padding-bottom: 2px;
+}
+
+.resetActions a:first-child {
+  color: var(--color-earth);
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-amber);
+  padding: 0.5rem 0.75rem;
+}
+
 .scrollHint {
   position: absolute;
   bottom: 2rem;
@@ -150,8 +228,17 @@
 }
 
 @media (min-width: 1024px) {
+  .heroInner {
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.62fr);
+  }
+
   .headline {
     font-size: var(--text-6xl);
+  }
+
+  .resetPanel {
+    justify-self: end;
+    margin-top: 96px;
   }
 }
 
@@ -163,5 +250,18 @@
 
   .content {
     padding-top: 96px;
+  }
+
+  .resetPanel {
+    grid-template-columns: 76px 1fr;
+    padding: var(--space-4);
+  }
+
+  .resetCover {
+    width: 76px;
+  }
+
+  .resetActions {
+    display: grid;
   }
 }
