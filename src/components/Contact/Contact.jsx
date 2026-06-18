@@ -63,7 +63,9 @@ function Contact() {
         .map(([key]) => key);
 
       if (missingConfig.length) {
-        throw new Error(`Missing EmailJS configuration: ${missingConfig.join(', ')}`);
+        throw new Error(
+          `Missing EmailJS configuration: ${missingConfig.join(', ')}`
+        );
       }
 
       // Send 1 — notification email to Terry
@@ -89,10 +91,11 @@ function Contact() {
       // Success state
       setSuccess(true);
       setFormData({ name: '', email: '', message: '', _honey: '' });
-
     } catch (error) {
       console.error('EmailJS error:', error);
-      setError('Something went wrong. Please email us directly at findyourdoor.ie@gmail.com');
+      setError(
+        'Something went wrong. Please email us directly at findyourdoor.ie@gmail.com'
+      );
     } finally {
       setSending(false);
       submitLockRef.current = false;
@@ -104,20 +107,31 @@ function Contact() {
       <div className="container section-pad">
         <div className={styles.wrap}>
           <h2 className={styles.headline}>Get in touch</h2>
-          <p className={styles.sub}>Send Terry a message and he will get back to you as soon as possible.</p>
+          <p className={styles.sub}>
+            Send Terry a message and he will get back to you as soon as
+            possible.
+          </p>
 
           {success ? (
             <div className={styles.success}>
               <p className={styles.successBadge}>Message received</p>
               <h3>Thank you for reaching out.</h3>
-              <p>I'll reply to you personally within 24 hours.</p>
+              <p>
+                I&apos;ll reply to you personally within 24 hours. (PS. Check
+                your spam folder if you don&apos;t hear back.)
+              </p>
               <div className={styles.successActions}>
-                <a className={styles.successPrimaryLink} href="https://calendly.com/findyourdoor/discovery-call">
+                <a
+                  className={styles.successPrimaryLink}
+                  href="https://calendly.com/findyourdoor/discovery-call"
+                >
                   Book a free call
                 </a>
-                
               </div>
-              <p className={styles.successNote}>Prefer to move faster? Grab a time that suits you and we can talk personally.</p>
+              <p className={styles.successNote}>
+                Prefer to move faster? Grab a time that suits you and we can
+                talk personally.
+              </p>
             </div>
           ) : (
             <form className={styles.form} onSubmit={handleSubmit}>
@@ -129,7 +143,9 @@ function Contact() {
                 className={styles.honeypot}
                 aria-hidden="true"
                 value={formData._honey}
-                onChange={(e) => setFormData({ ...formData, _honey: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, _honey: e.target.value })
+                }
               />
 
               <label htmlFor="name">Name</label>
@@ -141,7 +157,9 @@ function Contact() {
                 aria-required="true"
                 aria-describedby={error ? errorId : undefined}
                 value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
               />
 
               <label htmlFor="email">Email</label>
@@ -153,7 +171,9 @@ function Contact() {
                 aria-required="true"
                 aria-describedby={error ? errorId : undefined}
                 value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
               />
 
               <label htmlFor="message">Message</label>
@@ -166,7 +186,9 @@ function Contact() {
                 aria-required="true"
                 aria-describedby={`${error ? `${errorId} ` : ''}message-counter`.trim()}
                 value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }
               />
               <p id="message-counter" className={styles.counter}>
                 {formData.message.length}/{messageLimit}
@@ -174,7 +196,9 @@ function Contact() {
 
               <button type="submit" disabled={sending}>
                 <span className={styles.buttonContent}>
-                  {sending && <span className={styles.spinner} aria-hidden="true" />}
+                  {sending && (
+                    <span className={styles.spinner} aria-hidden="true" />
+                  )}
                   {sending ? 'Sending...' : 'Send message'}
                 </span>
               </button>
