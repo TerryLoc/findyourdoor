@@ -50,7 +50,7 @@ const weeks = [
   [
     'Week 2',
     'Sorting the Worry',
-    'Separate real problems from mental noise and steady the system.',
+    'Separate real problems from mental noise, calm the system, and begin the 5-Minute Peace Practice.',
   ],
   [
     'Week 3',
@@ -69,7 +69,7 @@ const weeks = [
   ],
   [
     'Week 6',
-    'Full Reflection and Review',
+    'Reflection, Review, and Next Door',
     'Complete your personal journey reflection, share feedback, identify the next door, and choose whether to book a free call.',
   ],
 ];
@@ -81,6 +81,7 @@ const included = [
   'A final integration and review week',
   'Short video lessons',
   'Audio reflections for quiet reflection',
+  'A 5-Minute Peace Practice to carry through the programme',
   'Downloadable worksheets',
   'The DOOR Method framework',
   'Practical exercises for worry and avoidance',
@@ -323,6 +324,10 @@ function WorryResetProgramme() {
                 reflection week where you review your journey, share feedback,
                 and have the option to book a free call.
               </p>
+              <p>
+                The pause weeks are part of the work. They give you time to
+                catch up, reflect, practise, and let the changes settle.
+              </p>
             </div>
 
             <div className={styles.programmeGrid}>
@@ -390,6 +395,9 @@ function WorryResetProgramme() {
                   No pressure. No overwhelm. Just ten quiet minutes with
                   yourself.
                 </p>
+                <p className={styles.quietLine}>
+                  This programme is designed to be lived, not binged.
+                </p>
               </div>
             </div>
           </div>
@@ -407,7 +415,6 @@ function WorryResetProgramme() {
               />
 
               <div>
-                <p className={styles.eyebrow}>About Terry</p>
                 <h2>A man looking to support other men</h2>
                 <p>
                   I am Terry Loughran, Life & Mindset Coach for Men and founder
