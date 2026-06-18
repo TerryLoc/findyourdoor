@@ -117,8 +117,9 @@ function Contact() {
               <p className={styles.successBadge}>Message received</p>
               <h3>Thank you for reaching out.</h3>
               <p>
-                I&apos;ll reply to you personally within 24 hours. (PS. Check
-                your spam folder if you don&apos;t hear back.)
+                I&apos;ll reply to you personally within 24 hours.
+                <br />
+                (PS. Check your spam folder if you don&apos;t hear back.)
               </p>
               <div className={styles.successActions}>
                 <a
