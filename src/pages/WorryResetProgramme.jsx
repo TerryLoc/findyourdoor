@@ -9,7 +9,7 @@ const worksheetCover = '/10min%20WRW%20p1.png';
 const programmeSchema = {
   '@context': 'https://schema.org',
   '@type': 'Course',
-  name: 'The Worry Reset',
+  name: 'The Worry Reset Programme',
   description:
     'A calm, practical four-week programme from Find Your Door for men who feel stuck in worry, overthinking, avoidance, procrastination, or loss of confidence.',
   provider: {
@@ -65,11 +65,13 @@ const weeks = [
 ];
 
 const included = [
-  '8 guided modules',
+  '8 calm, guided modules',
+  '2 modules released each week',
   'Short video lessons',
-  'Audio reflections',
+  'Audio reflections for quiet reflection',
   'Downloadable worksheets',
-  'The DOOR Method',
+  'The DOOR Method framework',
+  'Practical exercises for worry and avoidance',
   'A 30-day reset plan',
 ];
 
@@ -78,6 +80,13 @@ const fitItems = [
   'You want a calm, practical way to handle worry',
   'You are willing to pause and be honest with yourself',
   'You want one small step instead of trying to fix everything overnight',
+];
+
+const notFitItems = [
+  'You are looking for a quick fix',
+  'You want someone else to make your choices for you',
+  'You need therapy, clinical treatment, or urgent support',
+  'You are not willing to pause and reflect honestly',
 ];
 
 function ButtonLink({ href, children, variant = 'primary' }) {
@@ -105,9 +114,10 @@ function WorksheetOptIn() {
   if (submitted) {
     return (
       <div className={styles.formSuccess} role="status">
-        <p>Thank you. Your worksheet is on its way.</p>
+        <p>Thank you. Your details have been received.</p>
         <span>
-          Take your time with it. Ten quiet minutes is enough to begin.
+          Once the worksheet delivery is connected, this will send
+          automatically.
         </span>
       </div>
     );
@@ -150,6 +160,7 @@ function WorryResetProgramme() {
     window.scrollTo(0, 0);
   }, []);
 
+  // Temporary join link. Replace with checkout, booking, or contact route before launch if available.
   const joinHref = `mailto:${SITE.email}?subject=The%20Worry%20Reset%20Programme`;
 
   return (
@@ -166,7 +177,7 @@ function WorryResetProgramme() {
           <div className="container">
             <div className={styles.heroContent}>
               <p className={styles.eyebrow}>A Find Your Door Programme</p>
-              <h1>The Worry Reset</h1>
+              <h1>The Worry Reset Programme</h1>
               <p className={styles.subheadline}>
                 A calm four-week programme for men caught in worry,
                 overthinking, avoidance, and feeling stuck.
@@ -177,11 +188,11 @@ function WorryResetProgramme() {
                 honest next step.
               </p>
               <div className={styles.actions}>
-                <ButtonLink href={joinHref}>
-                  Join The Worry Reset Programme
+                <ButtonLink href="#worksheet">
+                  Download the Free Worksheet
                 </ButtonLink>
-                <ButtonLink href="#worksheet" variant="secondary">
-                  Start with the Free Worksheet
+                <ButtonLink href="#programme" variant="secondary">
+                  Learn About the Programme
                 </ButtonLink>
               </div>
             </div>
@@ -192,6 +203,19 @@ function WorryResetProgramme() {
                 alt="The 10-Minute Worry Reset Worksheet"
               />
             </figure>
+          </div>
+        </section>
+
+        <section className={styles.softEntry}>
+          <div className="container">
+            <p>
+              Not ready for the full programme yet? Start with the free
+              10-Minute Worry Reset Worksheet. No pressure. No overwhelm. Just
+              ten quiet minutes with yourself.
+            </p>
+            <ButtonLink href="#worksheet">
+              Download the Free Worksheet
+            </ButtonLink>
           </div>
         </section>
 
@@ -223,10 +247,17 @@ function WorryResetProgramme() {
                 You are never without choice - even when it feels that way
               </h2>
               <p>
-                Worry can make life feel narrow. The first choice is not always
-                a big dramatic life change. Sometimes it is pausing, breathing,
-                telling yourself the truth, and asking what you can actually do
-                next.
+                Worry can make life feel narrow. It can convince you there are
+                no options, no way forward, and no door to open.
+              </p>
+              <p>
+                But the first choice is not always a big dramatic life change.
+                Sometimes it is pausing, breathing, telling yourself the truth,
+                and asking what you can actually do next.
+              </p>
+              <p>
+                The work is not forcing the choice. The work is finding the
+                place inside you that wants to make it.
               </p>
               <blockquote>
                 &quot;I cannot change the wind, but I can adjust my sails.&quot;
@@ -234,6 +265,27 @@ function WorryResetProgramme() {
               <p className={styles.decision}>
                 That is not just philosophy. That is a decision.
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.videoSection}>
+          <div className="container section-pad">
+            <div className={styles.centerBlock}>
+              <p className={styles.eyebrow}>A message from Terry</p>
+              <h2>This is not about fixing you</h2>
+              <p>
+                It is about helping you pause, tell yourself the truth, and find
+                the next door.
+              </p>
+            </div>
+
+            <div
+              className={styles.videoPlaceholder}
+              role="img"
+              aria-label="Promo video coming soon"
+            >
+              <span>Promo video coming soon</span>
             </div>
           </div>
         </section>
@@ -306,6 +358,10 @@ function WorryResetProgramme() {
                   The 10-Minute Worry Reset Worksheet helps you get out of your
                   head, calm the noise, and find one honest next step.
                 </p>
+                <p>
+                  If it helps, the full programme gives you the deeper four-week
+                  path.
+                </p>
                 <WorksheetOptIn />
                 <p className={styles.quietLine}>
                   No pressure. No overwhelm. Just ten quiet minutes with
@@ -350,6 +406,15 @@ function WorryResetProgramme() {
                     ))}
                   </ul>
                 </div>
+
+                <div className={styles.fitBox}>
+                  <h3>This may not be for you if:</h3>
+                  <ul>
+                    {notFitItems.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -371,20 +436,22 @@ function WorryResetProgramme() {
                 Download the Free Worksheet
               </ButtonLink>
             </div>
-          </div>
-        </section>
 
-        <section className={styles.disclaimer}>
-          <div className="container">
-            <p>
-              The Worry Reset Programme and 10-Minute Worry Reset Worksheet are
-              for reflection, education, and personal development. They are not
-              therapy, medical advice, or a replacement for professional mental
-              health support. If anxiety feels severe, persistent, unmanageable,
-              or you feel at risk of harming yourself or someone else, please
-              contact a qualified health professional or emergency support
-              service in your area.
-            </p>
+            <aside
+              className={styles.disclaimer}
+              aria-label="Important programme note"
+            >
+              <h3>Important note</h3>
+              <p>
+                The Worry Reset Programme and 10-Minute Worry Reset Worksheet
+                are for reflection, education, and personal development. They
+                are not therapy, medical advice, or a replacement for
+                professional mental health support. If anxiety feels severe,
+                persistent, unmanageable, or you feel at risk of harming
+                yourself or someone else, please contact a qualified health
+                professional or emergency support service in your area.
+              </p>
+            </aside>
           </div>
         </section>
       </main>
