@@ -70,8 +70,7 @@ function Hero() {
               <h2>The Worry Reset Programme</h2>
               <p>
                 Start with the free 10-Minute Worry Reset Worksheet. If it
-                helps, there is a calm self-paced four-week programme waiting
-                behind it.
+                helps, there is a calm six-week programme waiting behind it.
               </p>
               <div className={styles.resetActions}>
                 <a href="/services/the-worry-reset-programme/#worksheet">

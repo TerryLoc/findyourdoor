@@ -11,7 +11,7 @@ const programmeSchema = {
   '@type': 'Course',
   name: 'The Worry Reset Programme',
   description:
-    'A calm, practical four-week programme from Find Your Door for men who feel stuck in worry, overthinking, avoidance, procrastination, or loss of confidence.',
+    'A calm six-week programme from Find Your Door for men who feel stuck in worry, overthinking, avoidance, procrastination, or loss of confidence.',
   provider: {
     '@type': 'Organization',
     name: 'Find Your Door',
@@ -49,24 +49,36 @@ const weeks = [
   ],
   [
     'Week 2',
-    'Understanding',
+    'Sorting the Worry',
     'Separate real problems from mental noise and steady the system.',
   ],
   [
     'Week 3',
-    'Action',
-    'Turn worry into one clear next step and rebuild confidence through action.',
+    'Reflection Week',
+    'No new modules. Catch up, repeat the worksheets, practise calming tools, and notice what is changing.',
   ],
   [
     'Week 4',
+    'Taking Back Control',
+    'Turn worry into one clear next step and rebuild confidence through action.',
+  ],
+  [
+    'Week 5',
     'Integration',
     'Handle setbacks without spiralling and create a simple 30-day plan.',
+  ],
+  [
+    'Week 6',
+    'Full Reflection and Review',
+    'Complete your personal journey reflection, share feedback, identify the next door, and choose whether to book a free call.',
   ],
 ];
 
 const included = [
   '8 calm, guided modules',
-  '2 modules released each week',
+  'Four weeks of teaching over six weeks',
+  'A mid-course reflection week',
+  'A final integration and review week',
   'Short video lessons',
   'Audio reflections for quiet reflection',
   'Downloadable worksheets',
@@ -167,7 +179,7 @@ function WorryResetProgramme() {
     <div className={styles.page}>
       <SEO
         title="The Worry Reset Programme | Find Your Door"
-        description="A calm, practical four-week programme from Find Your Door for men who feel stuck in worry, overthinking, avoidance, procrastination, or loss of confidence. Start with the free 10-Minute Worry Reset Worksheet."
+        description="A calm six-week programme from Find Your Door for men who feel stuck in worry, overthinking, avoidance, procrastination, or loss of confidence. Start with the free 10-Minute Worry Reset Worksheet."
         pathname="/services/the-worry-reset-programme/"
         structuredData={programmeSchema}
       />
@@ -179,8 +191,8 @@ function WorryResetProgramme() {
               <p className={styles.eyebrow}>A Find Your Door Programme</p>
               <h1>The Worry Reset Programme</h1>
               <p className={styles.subheadline}>
-                A calm, self-paced four-week programme for men caught in worry,
-                overthinking, avoidance, and feeling stuck.
+                A calm six-week programme designed to give you space to learn,
+                pause, practise, and reflect.
               </p>
               <p className={styles.heroBody}>
                 This is not about pretending everything is positive. It is about
@@ -302,11 +314,14 @@ function WorryResetProgramme() {
           <div className="container section-pad">
             <div className={styles.programmeIntro}>
               <p className={styles.eyebrow}>The programme</p>
-              <h2>A simple four-week rhythm</h2>
+              <h2>A simple six-week rhythm</h2>
               <p>
-                You receive two modules each week, enough to build momentum
-                without flooding you with too much at once. The programme is
-                designed to be lived, not binged.
+                The Worry Reset Programme is a calm six-week journey. You
+                receive the first four modules over two weeks, then take a
+                reflection week to catch up and practise. The final four modules
+                are released over the following two weeks, followed by a final
+                reflection week where you review your journey, share feedback,
+                and have the option to book a free call.
               </p>
             </div>
 
@@ -367,7 +382,7 @@ function WorryResetProgramme() {
                   head, calm the noise, and find one honest next step.
                 </p>
                 <p>
-                  If it helps, the full programme gives you the deeper four-week
+                  If it helps, the full programme gives you the deeper six-week
                   path.
                 </p>
                 <WorksheetOptIn />
