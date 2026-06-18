@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react';
-import emailjs from 'emailjs-com';
-import { SITE } from '@/constants/content';
+import { createEmailTemplateData, sendContactEmail } from '@/utils/email';
 import styles from './Contact.module.css';
 
 function Contact() {
@@ -31,62 +30,17 @@ function Contact() {
     setSending(true);
 
     const templateData = {
-      from_name: formData.name,
-      from_email: formData.email,
-      name: formData.name,
-      email: formData.email,
-      to_name: formData.name,
-      to_email: formData.email,
-      reply_to: formData.email,
-      message: formData.message,
-      title: 'Website enquiry',
-      date: new Date().toLocaleDateString('en-IE', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
+      ...createEmailTemplateData({
+        fromName: formData.name,
+        fromEmail: formData.email,
+        message: formData.message,
+        interestType: 'General website enquiry',
+        sourcePage: 'Homepage contact form',
       }),
     };
 
-    const emailConfig = {
-      serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      notifyTemplateId: import.meta.env.VITE_EMAILJS_TEMPLATE_NOTIFY,
-      replyTemplateId: import.meta.env.VITE_EMAILJS_TEMPLATE_REPLY,
-      publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-    };
-
     try {
-      const missingConfig = Object.entries(emailConfig)
-        .filter(([, value]) => !value)
-        .map(([key]) => key);
-
-      if (missingConfig.length) {
-        throw new Error(
-          `Missing EmailJS configuration: ${missingConfig.join(', ')}`
-        );
-      }
-
-      // Send 1 — notification email to Terry
-      await emailjs.send(
-        emailConfig.serviceId,
-        emailConfig.notifyTemplateId,
-        templateData,
-        emailConfig.publicKey
-      );
-
-      try {
-        // Send 2 — auto-reply to the person who contacted
-        await emailjs.send(
-          emailConfig.serviceId,
-          emailConfig.replyTemplateId,
-          templateData,
-          emailConfig.publicKey
-        );
-      } catch (autoReplyError) {
-        console.warn('EmailJS auto-reply failed:', autoReplyError);
-      }
+      await sendContactEmail(templateData);
 
       // Success state
       setSuccess(true);

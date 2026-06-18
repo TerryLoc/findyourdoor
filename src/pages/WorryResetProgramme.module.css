@@ -397,6 +397,14 @@
   gap: var(--space-2);
 }
 
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
 .worksheetForm label {
   color: var(--color-amber);
   font-size: var(--text-sm);
@@ -422,6 +430,16 @@
   font-size: var(--text-sm);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.worksheetForm button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+.formError {
+  color: #b23b3b !important;
+  font-size: var(--text-sm);
 }
 
 .formNote,
@@ -503,6 +521,37 @@
 
 .finalCta p {
   color: rgba(255, 255, 255, 0.72);
+}
+
+.enquiryPanel {
+  max-width: 620px;
+  margin: var(--space-10) auto 0;
+  border: var(--border-amber);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.06);
+  padding: var(--space-6);
+  text-align: left;
+}
+
+.enquiryPanel h3 {
+  color: var(--color-amber-warm);
+  font-size: var(--text-lg);
+  font-weight: 500;
+}
+
+.enquiryPanel p {
+  margin-top: var(--space-3);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.enquiryPanel .worksheetForm {
+  max-width: none;
+}
+
+.enquiryPanel .worksheetForm input {
+  border-bottom-color: rgba(250, 199, 117, 0.54);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
 }
 
 .disclaimerSection {

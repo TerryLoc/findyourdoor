@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import SEO from '@/components/SEO/SEO';
-import { SITE } from '@/constants/content';
 import terryPhoto from '@/assets/images/hero.jpeg';
+import { createEmailTemplateData, sendContactEmail } from '@/utils/email';
 import styles from './WorryResetProgramme.module.css';
 
 const worksheetCover = '/10min%20WRW%20p1.png';
@@ -115,55 +115,113 @@ function ButtonLink({ href, children, variant = 'primary' }) {
   );
 }
 
-function WorksheetOptIn() {
+function ContactCaptureForm({
+  formId,
+  buttonText,
+  interestType,
+  message,
+  successHeading,
+  successBody,
+}) {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    _honey: '',
+  });
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // Connect this placeholder to MailerLite, Mailchimp, ConvertKit, EmailJS, or another provider.
-    setSubmitted(true);
+    setError('');
+
+    if (formData._honey) return;
+    if (sending) return;
+
+    setSending(true);
+
+    try {
+      await sendContactEmail(
+        createEmailTemplateData({
+          fromName: formData.name,
+          fromEmail: formData.email,
+          message,
+          interestType,
+          sourcePage: 'The Worry Reset Programme page',
+        })
+      );
+
+      setSubmitted(true);
+      setFormData({ name: '', email: '', _honey: '' });
+    } catch (submitError) {
+      console.error('EmailJS error:', submitError);
+      setError(
+        'Something went wrong. Please check your details and try again.'
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   if (submitted) {
     return (
       <div className={styles.formSuccess} role="status">
-        <p>Thank you. Your details have been received.</p>
-        <span>
-          Once the worksheet delivery is connected, this will send
-          automatically.
-        </span>
+        <p>{successHeading}</p>
+        <span>{successBody}</span>
       </div>
     );
   }
 
   return (
     <form className={styles.worksheetForm} onSubmit={handleSubmit}>
+      <input
+        type="text"
+        name="_honey"
+        tabIndex={-1}
+        autoComplete="off"
+        className={styles.honeypot}
+        aria-hidden="true"
+        value={formData._honey}
+        onChange={(event) =>
+          setFormData({ ...formData, _honey: event.target.value })
+        }
+      />
+
       <div className={styles.fieldGroup}>
-        <label htmlFor="worksheet-name">First name</label>
+        <label htmlFor={`${formId}-name`}>First name</label>
         <input
-          id="worksheet-name"
+          id={`${formId}-name`}
           name="name"
           type="text"
           autoComplete="given-name"
           required
+          value={formData.name}
+          onChange={(event) =>
+            setFormData({ ...formData, name: event.target.value })
+          }
         />
       </div>
 
       <div className={styles.fieldGroup}>
-        <label htmlFor="worksheet-email">Email address</label>
+        <label htmlFor={`${formId}-email`}>Email address</label>
         <input
-          id="worksheet-email"
+          id={`${formId}-email`}
           name="email"
           type="email"
           autoComplete="email"
           required
+          value={formData.email}
+          onChange={(event) =>
+            setFormData({ ...formData, email: event.target.value })
+          }
         />
       </div>
 
-      <button type="submit">Download the Free Worksheet</button>
-      <p className={styles.formNote}>
-        Worksheet delivery provider to be connected before launch.
-      </p>
+      <button type="submit" disabled={sending}>
+        {sending ? 'Sending...' : buttonText}
+      </button>
+      {error && <p className={styles.formError}>{error}</p>}
     </form>
   );
 }
@@ -172,9 +230,6 @@ function WorryResetProgramme() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  // Temporary join link. Replace with checkout, booking, or contact route before launch if available.
-  const joinHref = `mailto:${SITE.email}?subject=The%20Worry%20Reset%20Programme`;
 
   return (
     <div className={styles.page}>
@@ -390,7 +445,14 @@ function WorryResetProgramme() {
                   If it helps, the full programme gives you the deeper six-week
                   path.
                 </p>
-                <WorksheetOptIn />
+                <ContactCaptureForm
+                  formId="worksheet-request"
+                  buttonText="Request the Free Worksheet"
+                  interestType="Worry Reset Worksheet request"
+                  message="I would like to receive the 10-Minute Worry Reset Worksheet."
+                  successHeading="Thank you. Your worksheet request has been received."
+                  successBody="I will make sure you get access as soon as the worksheet delivery is ready."
+                />
                 <p className={styles.quietLine}>
                   No pressure. No overwhelm. Just ten quiet minutes with
                   yourself.
@@ -462,9 +524,21 @@ function WorryResetProgramme() {
               <ButtonLink href="#worksheet">
                 Download the Free Worksheet
               </ButtonLink>
-              <ButtonLink href={joinHref} variant="secondary">
-                Ask About The Worry Reset Programme
-              </ButtonLink>
+            </div>
+            <div className={styles.enquiryPanel}>
+              <h3>Ask About The Worry Reset Programme</h3>
+              <p>
+                Leave your details and I will come back to you personally about
+                the programme.
+              </p>
+              <ContactCaptureForm
+                formId="programme-enquiry"
+                buttonText="Ask About The Worry Reset Programme"
+                interestType="Worry Reset Programme enquiry"
+                message="I would like to know more about The Worry Reset Programme."
+                successHeading="Thank you. Your enquiry has been received."
+                successBody="I will reply personally as soon as I can."
+              />
             </div>
           </div>
         </section>
