@@ -33,7 +33,13 @@ function Contact() {
     const templateData = {
       from_name: formData.name,
       from_email: formData.email,
+      name: formData.name,
+      email: formData.email,
+      to_name: formData.name,
+      to_email: formData.email,
+      reply_to: formData.email,
       message: formData.message,
+      title: 'Website enquiry',
       date: new Date().toLocaleDateString('en-IE', {
         weekday: 'long',
         year: 'numeric',
