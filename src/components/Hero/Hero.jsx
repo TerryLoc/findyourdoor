@@ -73,7 +73,7 @@ function Hero() {
                 helps, there is a calm six-week programme waiting behind it.
               </p>
               <div className={styles.resetActions}>
-                <a href="/services/the-worry-reset-programme/#worksheet">
+                <a href="/services/the-worry-reset-programme/">
                   Get the free worksheet
                 </a>
                 <a href="/services/the-worry-reset-programme/">
