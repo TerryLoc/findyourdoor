@@ -44,22 +44,41 @@ function Contact() {
       }),
     };
 
+    const emailConfig = {
+      serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      notifyTemplateId: import.meta.env.VITE_EMAILJS_TEMPLATE_NOTIFY,
+      replyTemplateId: import.meta.env.VITE_EMAILJS_TEMPLATE_REPLY,
+      publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+    };
+
     try {
+      const missingConfig = Object.entries(emailConfig)
+        .filter(([, value]) => !value)
+        .map(([key]) => key);
+
+      if (missingConfig.length) {
+        throw new Error(`Missing EmailJS configuration: ${missingConfig.join(', ')}`);
+      }
+
       // Send 1 — notification email to Terry
       await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_NOTIFY,
+        emailConfig.serviceId,
+        emailConfig.notifyTemplateId,
         templateData,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        emailConfig.publicKey
       );
 
-      // Send 2 — auto-reply to the person who contacted
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_REPLY,
-        templateData,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
+      try {
+        // Send 2 — auto-reply to the person who contacted
+        await emailjs.send(
+          emailConfig.serviceId,
+          emailConfig.replyTemplateId,
+          templateData,
+          emailConfig.publicKey
+        );
+      } catch (autoReplyError) {
+        console.warn('EmailJS auto-reply failed:', autoReplyError);
+      }
 
       // Success state
       setSuccess(true);
