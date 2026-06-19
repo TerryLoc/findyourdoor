@@ -21,7 +21,7 @@ function NotFound() {
             <p className={styles.kicker}>404</p>
             <h1>The door you looked for is not here.</h1>
             <p>
-              The page may have moved, the link may be out of date, or the address might be incorrect.
+              The page may have moved, the link may be out of date or the address might be incorrect.
               You can head back home and keep moving forward.
             </p>
             <div className={styles.actions}>

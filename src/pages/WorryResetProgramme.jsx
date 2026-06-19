@@ -11,22 +11,25 @@ const programmeSchema = {
   '@graph': [
     {
       '@type': 'WebPage',
-      '@id': 'https://findyourdoor.ie/services/the-worry-reset-programme/#webpage',
+      '@id':
+        'https://findyourdoor.ie/services/the-worry-reset-programme/#webpage',
       url: 'https://findyourdoor.ie/services/the-worry-reset-programme/',
       name: 'The Worry Reset Programme | Find Your Door',
       description:
-        'A calm six-week programme from Find Your Door for men who feel stuck in worry, overthinking, avoidance, procrastination, or loss of confidence.',
+        'A calm six-week programme from Find Your Door for men who feel stuck in worry, overthinking, avoidance, procrastination or loss of confidence.',
       isPartOf: {
         '@id': 'https://findyourdoor.ie/#website',
       },
       about: {
-        '@id': 'https://findyourdoor.ie/services/the-worry-reset-programme/#course',
+        '@id':
+          'https://findyourdoor.ie/services/the-worry-reset-programme/#course',
       },
       inLanguage: 'en-IE',
     },
     {
       '@type': 'BreadcrumbList',
-      '@id': 'https://findyourdoor.ie/services/the-worry-reset-programme/#breadcrumb',
+      '@id':
+        'https://findyourdoor.ie/services/the-worry-reset-programme/#breadcrumb',
       itemListElement: [
         {
           '@type': 'ListItem',
@@ -44,17 +47,19 @@ const programmeSchema = {
     },
     {
       '@type': 'Course',
-      '@id': 'https://findyourdoor.ie/services/the-worry-reset-programme/#course',
+      '@id':
+        'https://findyourdoor.ie/services/the-worry-reset-programme/#course',
       name: 'The Worry Reset Programme',
       description:
-        'A calm six-week guided self-paced programme with four weeks of teaching, one mid-course reflection week, and one final integration week.',
+        'A calm six-week guided self-paced programme with four weeks of teaching, one mid-course reflection week and one final integration week.',
       image: 'https://findyourdoor.ie/og-image.jpg',
       provider: {
         '@id': 'https://findyourdoor.ie/#business',
       },
       audience: {
         '@type': 'Audience',
-        audienceType: 'Men in their 30s and 40s who feel stuck in worry, overthinking, avoidance, or loss of confidence',
+        audienceType:
+          'Men in their 30s and 40s who feel stuck in worry, overthinking, avoidance or loss of confidence',
       },
       teaches: [
         'Separating real problems from mental noise',
@@ -84,8 +89,8 @@ const programmeSchema = {
 
 const recognitionItems = [
   'You replay conversations long after they happen',
-  'You avoid decisions, messages, bills, or conversations',
-  'You lie awake thinking about work, money, health, or relationships',
+  'You avoid decisions, messages, bills or conversations',
+  'You lie awake thinking about work, money, health or relationships',
   'You have lost confidence in yourself, but you are not sure when it happened',
 ];
 
@@ -113,12 +118,12 @@ const weeks = [
   [
     'Week 2',
     'Sorting the Worry',
-    'Separate real problems from mental noise, calm the system, and begin the 5-Minute Peace Practice.',
+    'Separate real problems from mental noise, calm the system and begin the 5-Minute Peace Practice.',
   ],
   [
     'Week 3',
     'Reflection Week',
-    'No new modules. Catch up, repeat the worksheets, practise calming tools, and notice what is changing.',
+    'No new modules. Catch up, repeat the worksheets, practise calming tools and notice what is changing.',
   ],
   [
     'Week 4',
@@ -132,8 +137,8 @@ const weeks = [
   ],
   [
     'Week 6',
-    'Reflection, Review, and Next Door',
-    'Complete your personal journey reflection, share feedback, identify the next door, and choose whether to book a free call.',
+    'Reflection, Review and Next Door',
+    'Complete your personal journey reflection, share feedback, identify the next door and choose whether to book a free call.',
   ],
 ];
 
@@ -161,7 +166,7 @@ const fitItems = [
 const notFitItems = [
   'You are looking for a quick fix',
   'You are looking for someone else to make the choice for you',
-  'You need therapy, clinical treatment, or urgent support',
+  'You need therapy, clinical treatment or urgent support',
   'You are not willing to pause and reflect honestly',
 ];
 
@@ -298,7 +303,7 @@ function WorryResetProgramme() {
     <div className={styles.page}>
       <SEO
         title="The Worry Reset Programme | Find Your Door"
-        description="A calm six-week programme from Find Your Door for men who feel stuck in worry, overthinking, avoidance, procrastination, or loss of confidence. Start with the free 10-Minute Worry Reset Worksheet."
+        description="A calm six-week programme from Find Your Door for men who feel stuck in worry, overthinking, avoidance, procrastination or loss of confidence. Start with the free 10-Minute Worry Reset Worksheet."
         pathname="/services/the-worry-reset-programme/"
         structuredData={programmeSchema}
       />
@@ -311,11 +316,11 @@ function WorryResetProgramme() {
               <h1>The Worry Reset Programme</h1>
               <p className={styles.subheadline}>
                 A calm six-week programme designed to give you space to learn,
-                pause, practise, and reflect.
+                pause, practise and reflect.
               </p>
               <p className={styles.heroBody}>
                 This is not about pretending everything is positive. It is about
-                slowing down, telling yourself the truth, and choosing one
+                slowing down, telling yourself the truth and choosing one
                 honest next step.
               </p>
               <div className={styles.actions}>
@@ -357,7 +362,7 @@ function WorryResetProgramme() {
               <h2>When worry starts shaping your life</h2>
               <p>
                 Worry does not always look like panic. Sometimes it looks like
-                delay, silence, irritability, checking out, or avoiding the
+                delay, silence, irritability, checking out or avoiding the
                 thing you know needs your attention.
               </p>
             </div>
@@ -379,7 +384,7 @@ function WorryResetProgramme() {
               </h2>
               <p>
                 Worry can make life feel narrow. It can convince you there are
-                no options, no way forward, and no door to open.
+                no options, no way forward and no door to open.
               </p>
               <p>
                 But the first choice is not always a big dramatic life change.
@@ -406,7 +411,7 @@ function WorryResetProgramme() {
               <p className={styles.eyebrow}>A message from Terry</p>
               <h2>This is not about fixing you</h2>
               <p>
-                It is about helping you pause, tell yourself the truth, and find
+                It is about helping you pause, tell yourself the truth and find
                 the next door.
               </p>
             </div>
@@ -444,7 +449,7 @@ function WorryResetProgramme() {
               </p>
               <p>
                 The pause weeks are part of the work. They give you time to
-                catch up, reflect, practise, and let the changes settle.
+                catch up, reflect, practise and let the changes settle.
               </p>
             </div>
 
@@ -502,7 +507,7 @@ function WorryResetProgramme() {
                 <h2>Not ready for the full programme yet? Start here.</h2>
                 <p>
                   The 10-Minute Worry Reset Worksheet helps you get out of your
-                  head, calm the noise, and find one honest next step.
+                  head, calm the noise and find one honest next step.
                 </p>
                 <p>
                   If it helps, the full programme gives you the deeper six-week
@@ -544,13 +549,13 @@ function WorryResetProgramme() {
                 <p>
                   I am Terry Loughran, Life & Mindset Coach for Men and founder
                   of Find Your Door. I support men in their 30s and 40s who feel
-                  stuck, have lost confidence, or are carrying more than they
+                  stuck, have lost confidence or are carrying more than they
                   let on.
                 </p>
                 <p>
                   This programme was created to give men a calm, practical way
-                  to face worry, understand the pattern, and take one honest
-                  step towards the next door.
+                  to face worry, understand the pattern and take one honest step
+                  towards the next door.
                 </p>
 
                 <div className={styles.fitBox}>
@@ -615,10 +620,10 @@ function WorryResetProgramme() {
               <h3>Important note</h3>
               <p>
                 The Worry Reset Programme and 10-Minute Worry Reset Worksheet
-                are for reflection, education, and personal development. They
-                are not therapy, medical advice, or a replacement for
+                are for reflection, education and personal development. They
+                are not therapy, medical advice or a replacement for
                 professional mental health support. If anxiety feels severe,
-                persistent, unmanageable, or you feel at risk of harming
+                persistent, unmanageable or you feel at risk of harming
                 yourself or someone else, please contact a qualified health
                 professional or emergency support service in your area.
               </p>

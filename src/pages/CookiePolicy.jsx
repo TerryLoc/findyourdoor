@@ -19,7 +19,7 @@ function CookiePolicy() {
     <div className={styles.page}>
       <SEO
         title="Cookie Policy | Find Your Door"
-        description="Cookie categories, purpose, and your consent choices on Find Your Door."
+        description="Cookie categories, purpose and your consent choices on Find Your Door."
         pathname="/cookie-policy"
         type="article"
         structuredData={schema}
@@ -38,7 +38,7 @@ function CookiePolicy() {
               <h2>What are cookies</h2>
               <p>
                 Cookies and similar browser storage are small pieces of information stored on your device
-                when you visit a website. They help websites function correctly, remember choices, and can
+                when you visit a website. They help websites function correctly, remember choices and can
                 support analytics or marketing only when consent is given.
               </p>
             </section>
@@ -47,7 +47,7 @@ function CookiePolicy() {
               <h2>Cookies we use</h2>
               <ul>
                 <li>
-                  Strictly necessary storage: required for core site functionality, security, and your cookie
+                  Strictly necessary storage: required for core site functionality, security and your cookie
                   preference settings. This includes remembering your cookie choices.
                 </li>
                 <li>
@@ -64,7 +64,7 @@ function CookiePolicy() {
             <section>
               <h2>How consent works</h2>
               <p>
-                On your first visit, you can accept all cookies, reject optional cookies, or customize preferences.
+                On your first visit, you can accept all cookies, reject optional cookies or customise preferences.
                 You can reopen cookie settings at any time from the website footer.
               </p>
               <p>

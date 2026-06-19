@@ -24,7 +24,7 @@ export const HERO = {
   eyebrow: 'Life & Mindset Coaching for Men',
   headline: 'The choice is\nalways yours.',
   subheadline: "I'm just here to help you find your door.",
-  body: "Working with men in their 30s & 40s who feel stuck, flat, or like they've quietly lost themselves.",
+  body: "Working with men in their 30s & 40s who feel stuck, flat or like they've quietly lost themselves.",
   cta: 'Book a free 20-minute call',
   ctaSecondary: 'Read my story',
 };
@@ -75,7 +75,7 @@ export const OFFER = {
     'Access to Terry for the full 90 days',
   ],
   outcome:
-    "By the end of 90 days you will know exactly what you want, understand what's been holding you back, and have a clear, honest plan — with the confidence to act on it.",
+    "By the end of 90 days you will know exactly what you want, understand what's been holding you back and have a clear, honest plan — with the confidence to act on it.",
   price: '€2,000',
   priceSub: 'or €750 × 3 months',
   cta: 'Book your free discovery call',

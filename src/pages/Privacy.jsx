@@ -19,7 +19,7 @@ const Privacy = () => {
     <div className={styles.page}>
       <SEO
         title="Privacy Policy | Find Your Door"
-        description="How Find Your Door collects, uses, and protects personal data in line with GDPR."
+        description="How Find Your Door collects, uses and protects personal data in line with GDPR."
         pathname="/privacy"
         type="article"
         structuredData={privacySchema}
@@ -112,7 +112,7 @@ const Privacy = () => {
               <h2>Your rights under GDPR</h2>
               <p>
                 You have the right to access, correct or delete the personal data we hold about
-                you, and to object to its processing. To exercise any of these rights contact us at{' '}
+                you and to object to its processing. To exercise any of these rights contact us at{' '}
                 <a href="mailto:findyourdoor.ie@gmail.com">findyourdoor.ie@gmail.com</a>. We will
                 respond within 30 days.
               </p>

@@ -53,7 +53,7 @@ function saveConsent(consent) {
 
 function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
-  const [showCustomize, setShowCustomize] = useState(false);
+  const [showCustomise, setShowCustomise] = useState(false);
   const [preferences, setPreferences] = useState(defaultConsent);
 
   useEffect(() => {
@@ -74,7 +74,7 @@ function CookieConsent() {
       if (stored) {
         setPreferences(stored);
       }
-      setShowCustomize(true);
+      setShowCustomise(true);
       setIsVisible(true);
     };
 
@@ -86,14 +86,14 @@ function CookieConsent() {
     if (!isVisible) return undefined;
 
     const handleKeyDown = (event) => {
-      if (event.key === 'Escape' && showCustomize) {
-        setShowCustomize(false);
+      if (event.key === 'Escape' && showCustomise) {
+        setShowCustomise(false);
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isVisible, showCustomize]);
+  }, [isVisible, showCustomise]);
 
   if (!isVisible) return null;
 
@@ -108,7 +108,7 @@ function CookieConsent() {
     saveConsent(consent);
     setPreferences(consent);
     setIsVisible(false);
-    setShowCustomize(false);
+    setShowCustomise(false);
   };
 
   return (
@@ -130,7 +130,7 @@ function CookieConsent() {
           <Link to="/cookie-policy">Cookie Policy</Link> and <Link to="/privacy">Privacy Policy</Link>.
         </p>
 
-        {showCustomize && (
+        {showCustomise && (
           <div className={styles.options}>
             <label>
               <input type="checkbox" checked disabled />
@@ -163,10 +163,10 @@ function CookieConsent() {
           <button type="button" onClick={() => applyAndClose({ ...preferences, analytics: false, marketing: false })}>
             Reject optional
           </button>
-          <button type="button" onClick={() => setShowCustomize((prev) => !prev)}>
-            {showCustomize ? 'Hide options' : 'Customize'}
+          <button type="button" onClick={() => setShowCustomise((prev) => !prev)}>
+            {showCustomise ? 'Hide options' : 'Customise'}
           </button>
-          {showCustomize ? (
+          {showCustomise ? (
             <button type="button" className={styles.primary} onClick={() => applyAndClose(preferences)}>
               Save choices
             </button>

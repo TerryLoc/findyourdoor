@@ -31,7 +31,7 @@ const homeSchema = {
       image: 'https://findyourdoor.ie/og-image.jpg',
       email: 'findyourdoor.ie@gmail.com',
       description:
-        'Life and mindset coaching for men who feel stuck, flat, or disconnected from themselves.',
+        'Life and mindset coaching for men who feel stuck, flat or disconnected from themselves.',
       areaServed: {
         '@type': 'Country',
         name: 'Ireland',
@@ -69,7 +69,7 @@ const homeSchema = {
       url: 'https://findyourdoor.ie/',
       name: 'Find Your Door | Life & Mindset Coaching for Men',
       description:
-        'Life and mindset coaching for men with Terry Loughran. Honest, practical support to regain clarity, confidence, and direction.',
+        'Life and mindset coaching for men with Terry Loughran. Honest, practical support to regain clarity, confidence and direction.',
       isPartOf: {
         '@id': 'https://findyourdoor.ie/#website',
       },
@@ -86,7 +86,7 @@ function Home() {
     <div className={styles.pageWrap}>
       <SEO
         title="Find Your Door | Life & Mindset Coaching for Men"
-        description="Life & mindset coaching for men with Terry Loughran. Honest, practical support to regain clarity, confidence, and direction."
+        description="Life & mindset coaching for men with Terry Loughran. Honest, practical support to regain clarity, confidence and direction."
         pathname="/"
         structuredData={homeSchema}
       />
