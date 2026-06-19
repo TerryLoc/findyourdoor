@@ -388,7 +388,7 @@ function WorryResetProgramme() {
               </p>
               <p>
                 But the first choice is not always a big dramatic life change.
-                Sometimes it is pausing, breathing, telling yourself the truth,
+                Sometimes it is pausing, breathing, telling yourself the truth
                 and asking what you can actually do next.
               </p>
               <p>
@@ -444,7 +444,7 @@ function WorryResetProgramme() {
                 receive the first four modules over two weeks, then take a
                 reflection week to catch up and practise. The final four modules
                 are released over the following two weeks, followed by a final
-                reflection week where you review your journey, share feedback,
+                reflection week where you review your journey, share feedback
                 and have the option to book a free call.
               </p>
               <p>
