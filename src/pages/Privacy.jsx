@@ -56,8 +56,8 @@ const Privacy = () => {
                 <li>Your name and email address when you book a discovery call via Calendly</li>
               </ul>
               <p>
-                We do not collect any information automatically beyond standard analytics and we do
-                not use tracking cookies for advertising.
+                We do not use advertising trackers. If analytics or marketing tools are added, they
+                are only used where you have given consent through the cookie settings.
               </p>
             </section>
 
@@ -101,9 +101,10 @@ const Privacy = () => {
             <section className={styles.section}>
               <h2>Cookies</h2>
               <p>
-                This website uses no advertising cookies and no third party tracking cookies.
-                Essential cookies may be used to maintain basic site functionality. By using this
-                site you consent to this minimal use of cookies.
+                This website uses essential storage to keep the site working and remember your cookie
+                choices. Optional analytics and marketing tools are off by default and only used if
+                you choose them in the cookie settings. You can change your choices at any time from
+                the website footer.
               </p>
             </section>
 

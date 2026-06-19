@@ -1,39 +1,60 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './CookieConsent.module.css';
 
 const CONSENT_KEY = 'fyd_cookie_consent_v1';
+const CONSENT_VERSION = 1;
 const OPEN_SETTINGS_EVENT = 'fyd:open-cookie-settings';
+const CONSENT_UPDATED_EVENT = 'fyd:cookie-consent-updated';
 
 const defaultConsent = {
+  version: CONSENT_VERSION,
   necessary: true,
   analytics: false,
   marketing: false,
   updatedAt: null,
 };
 
+function normalizeConsent(consent) {
+  if (!consent || consent.version !== CONSENT_VERSION) return null;
+
+  return {
+    ...defaultConsent,
+    analytics: Boolean(consent.analytics),
+    marketing: Boolean(consent.marketing),
+    updatedAt: consent.updatedAt || null,
+  };
+}
+
 function readStoredConsent() {
   try {
     const stored = localStorage.getItem(CONSENT_KEY);
-    return stored ? JSON.parse(stored) : null;
+    return stored ? normalizeConsent(JSON.parse(stored)) : null;
   } catch {
     return null;
   }
 }
 
 function saveConsent(consent) {
-  localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
+  try {
+    localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
+  } catch {
+    return false;
+  }
+
+  window.dispatchEvent(
+    new CustomEvent(CONSENT_UPDATED_EVENT, {
+      detail: consent,
+    })
+  );
+
+  return true;
 }
 
 function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
   const [showCustomize, setShowCustomize] = useState(false);
   const [preferences, setPreferences] = useState(defaultConsent);
-
-  const preferencesDate = useMemo(
-    () => new Date().toISOString(),
-    [isVisible, showCustomize, preferences.analytics, preferences.marketing]
-  );
 
   useEffect(() => {
     const stored = readStoredConsent();
@@ -61,10 +82,29 @@ function CookieConsent() {
     return () => window.removeEventListener(OPEN_SETTINGS_EVENT, handleOpenSettings);
   }, []);
 
+  useEffect(() => {
+    if (!isVisible) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape' && showCustomize) {
+        setShowCustomize(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isVisible, showCustomize]);
+
   if (!isVisible) return null;
 
   const applyAndClose = (nextConsent) => {
-    const consent = { ...nextConsent, necessary: true, updatedAt: preferencesDate };
+    const consent = {
+      ...defaultConsent,
+      ...nextConsent,
+      version: CONSENT_VERSION,
+      necessary: true,
+      updatedAt: new Date().toISOString(),
+    };
     saveConsent(consent);
     setPreferences(consent);
     setIsVisible(false);
@@ -72,13 +112,22 @@ function CookieConsent() {
   };
 
   return (
-    <aside className={styles.banner} role="dialog" aria-live="polite" aria-label="Cookie preferences">
+    <aside
+      className={styles.banner}
+      role="dialog"
+      aria-modal="false"
+      aria-live="polite"
+      aria-labelledby="cookie-consent-title"
+      aria-describedby="cookie-consent-description"
+    >
       <div className={styles.inner}>
-        <p className={styles.title}>Your privacy choices</p>
-        <p className={styles.body}>
-          We use essential cookies to keep this site secure and working. Optional analytics and marketing
-          cookies are off by default and only used if you consent. Read our <Link to="/cookie-policy">Cookie Policy</Link>{' '}
-          and <Link to="/privacy">Privacy Policy</Link>.
+        <p className={styles.title} id="cookie-consent-title">
+          Your privacy choices
+        </p>
+        <p className={styles.body} id="cookie-consent-description">
+          We use essential storage to keep this site secure and remember your choices. Optional analytics
+          and marketing tools stay off unless you choose them. Read our{' '}
+          <Link to="/cookie-policy">Cookie Policy</Link> and <Link to="/privacy">Privacy Policy</Link>.
         </p>
 
         {showCustomize && (

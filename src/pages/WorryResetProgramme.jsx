@@ -8,15 +8,78 @@ const worksheetCover = '/10min%20WRW%20p1.png';
 
 const programmeSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Course',
-  name: 'The Worry Reset Programme',
-  description:
-    'A calm six-week programme from Find Your Door for men who feel stuck in worry, overthinking, avoidance, procrastination, or loss of confidence.',
-  provider: {
-    '@type': 'Organization',
-    name: 'Find Your Door',
-    sameAs: 'https://findyourdoor.ie',
-  },
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://findyourdoor.ie/services/the-worry-reset-programme/#webpage',
+      url: 'https://findyourdoor.ie/services/the-worry-reset-programme/',
+      name: 'The Worry Reset Programme | Find Your Door',
+      description:
+        'A calm six-week programme from Find Your Door for men who feel stuck in worry, overthinking, avoidance, procrastination, or loss of confidence.',
+      isPartOf: {
+        '@id': 'https://findyourdoor.ie/#website',
+      },
+      about: {
+        '@id': 'https://findyourdoor.ie/services/the-worry-reset-programme/#course',
+      },
+      inLanguage: 'en-IE',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://findyourdoor.ie/services/the-worry-reset-programme/#breadcrumb',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://findyourdoor.ie/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'The Worry Reset Programme',
+          item: 'https://findyourdoor.ie/services/the-worry-reset-programme/',
+        },
+      ],
+    },
+    {
+      '@type': 'Course',
+      '@id': 'https://findyourdoor.ie/services/the-worry-reset-programme/#course',
+      name: 'The Worry Reset Programme',
+      description:
+        'A calm six-week guided self-paced programme with four weeks of teaching, one mid-course reflection week, and one final integration week.',
+      image: 'https://findyourdoor.ie/og-image.jpg',
+      provider: {
+        '@id': 'https://findyourdoor.ie/#business',
+      },
+      audience: {
+        '@type': 'Audience',
+        audienceType: 'Men in their 30s and 40s who feel stuck in worry, overthinking, avoidance, or loss of confidence',
+      },
+      teaches: [
+        'Separating real problems from mental noise',
+        'Calming the system with gentle regulation tools',
+        'Using the DOOR Method to choose one honest next step',
+        'Rebuilding confidence through action',
+      ],
+      hasCourseInstance: {
+        '@type': 'CourseInstance',
+        courseMode: 'online',
+        courseWorkload: 'P6W',
+      },
+    },
+    {
+      '@type': 'Organization',
+      '@id': 'https://findyourdoor.ie/#business',
+      name: 'Find Your Door',
+      url: 'https://findyourdoor.ie/',
+      logo: 'https://findyourdoor.ie/main_logo.png',
+      founder: {
+        '@type': 'Person',
+        name: 'Terry Loughran',
+      },
+    },
+  ],
 };
 
 const recognitionItems = [
