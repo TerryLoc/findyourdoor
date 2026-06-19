@@ -243,6 +243,16 @@
 }
 
 @media (max-width: 767px) {
+  .hero {
+    min-height: auto;
+    padding-bottom: var(--space-12);
+    place-items: start;
+  }
+
+  .heroInner {
+    padding-bottom: var(--space-6);
+  }
+
   .accent {
     left: -0.8rem;
     top: 5.5rem;
@@ -255,6 +265,7 @@
   .resetPanel {
     grid-template-columns: 76px 1fr;
     padding: var(--space-4);
+    margin-bottom: var(--space-6);
   }
 
   .resetCover {
@@ -263,5 +274,9 @@
 
   .resetActions {
     display: grid;
+  }
+
+  .scrollHint {
+    display: none;
   }
 }
