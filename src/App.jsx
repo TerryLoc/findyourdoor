@@ -54,6 +54,10 @@ function App() {
             path="/services/the-worry-reset-programme/"
             element={<WorryResetProgramme />}
           />
+          <Route
+            path="/services/the-worry-reset-programme"
+            element={<WorryResetProgramme />}
+          />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/privacy-policy" element={<Privacy />} />
           <Route path="/cookie-policy" element={<CookiePolicy />} />
