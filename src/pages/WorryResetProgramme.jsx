@@ -324,9 +324,7 @@ function WorryResetProgramme() {
                 honest next step.
               </p>
               <div className={styles.actions}>
-                <ButtonLink href="#worksheet">
-                  Download the Free Worksheet
-                </ButtonLink>
+                <ButtonLink href="#worksheet">Get the Free Worksheet</ButtonLink>
                 <ButtonLink href="#programme" variant="secondary">
                   Learn About the Programme
                 </ButtonLink>
@@ -351,9 +349,7 @@ function WorryResetProgramme() {
               10-Minute Worry Reset Worksheet. No pressure. No overwhelm. Just
               ten quiet minutes with yourself.
             </p>
-            <ButtonLink href="#worksheet">
-              Download the Free Worksheet
-            </ButtonLink>
+            <ButtonLink href="#worksheet">Get the Free Worksheet</ButtonLink>
           </div>
         </section>
 
@@ -429,9 +425,7 @@ function WorryResetProgramme() {
               <p>
                 Watch the short message, then start with the free worksheet.
               </p>
-              <ButtonLink href="#worksheet">
-                Download the Free Worksheet
-              </ButtonLink>
+              <ButtonLink href="#worksheet">Get the Free Worksheet</ButtonLink>
             </div>
           </div>
         </section>
@@ -520,11 +514,11 @@ function WorryResetProgramme() {
                 </p>
                 <ContactCaptureForm
                   formId="worksheet-request"
-                  buttonText="Request the Free Worksheet"
+                  buttonText="Send Me the Free Worksheet"
                   interestType="Worry Reset Worksheet request"
                   message="I would like to receive the 10-Minute Worry Reset Worksheet."
-                  successHeading="Thank you. Your worksheet request has been received."
-                  successBody="I will make sure you get access as soon as the worksheet delivery is ready."
+                  successHeading="Thank you. Your worksheet is on its way."
+                  successBody="I will send the 10-Minute Worry Reset Worksheet to your inbox shortly. Please check your spam folder if it does not arrive."
                 />
                 <p className={styles.quietLine}>
                   No pressure. No overwhelm. Just ten quiet minutes with
@@ -594,9 +588,7 @@ function WorryResetProgramme() {
               step.
             </p>
             <div className={styles.actions}>
-              <ButtonLink href="#worksheet">
-                Download the Free Worksheet
-              </ButtonLink>
+              <ButtonLink href="#worksheet">Get the Free Worksheet</ButtonLink>
             </div>
             <div className={styles.enquiryPanel}>
               <h3>Ask About The Worry Reset Programme</h3>
