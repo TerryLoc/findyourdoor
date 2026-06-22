@@ -622,4 +622,25 @@
   .methodPanel {
     padding: var(--space-6);
   }
+
+  .aboutContent {
+    display: contents;
+  }
+
+  .aboutGrid {
+    margin-top: 0;
+  }
+
+  .aboutContent h2 {
+    order: 1;
+  }
+
+  .aboutGrid img {
+    order: 2;
+  }
+
+  .aboutContent p,
+  .aboutContent .fitBox {
+    order: 3;
+  }
 }

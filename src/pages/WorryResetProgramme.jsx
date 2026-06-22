@@ -545,7 +545,7 @@ function WorryResetProgramme() {
                 height="566"
               />
 
-              <div>
+              <div className={styles.aboutContent}>
                 <h2>A man looking to support other men</h2>
                 <p>
                   I am Terry Loughran, Life & Mindset Coach for Men and founder
