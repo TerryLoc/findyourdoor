@@ -133,8 +133,7 @@
 }
 
 .recognition,
-.worksheetSection,
-.aboutSection {
+.worksheetSection {
   background: var(--color-parchment);
 }
 
@@ -222,7 +221,8 @@
   font-size: var(--text-xl);
 }
 
-.programmeSection {
+.programmeSection,
+.aboutSection {
   background: var(--color-parchment-mid);
 }
 
@@ -480,6 +480,7 @@
   object-fit: cover;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
+  border: var(--color-earth) solid;
 }
 
 .fitBox {

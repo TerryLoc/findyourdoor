@@ -320,11 +320,13 @@ function WorryResetProgramme() {
               </p>
               <p className={styles.heroBody}>
                 This is not about pretending everything is positive. It is about
-                slowing down, telling yourself the truth and choosing one
-                honest next step.
+                slowing down, telling yourself the truth and choosing one honest
+                next step.
               </p>
               <div className={styles.actions}>
-                <ButtonLink href="#worksheet">Get the Free Worksheet</ButtonLink>
+                <ButtonLink href="#worksheet">
+                  Get the Free Worksheet
+                </ButtonLink>
                 <ButtonLink href="#programme" variant="secondary">
                   Learn About the Programme
                 </ButtonLink>
@@ -360,8 +362,8 @@ function WorryResetProgramme() {
               <h2>When worry starts shaping your life</h2>
               <p>
                 Worry does not always look like panic. Sometimes it looks like
-                delay, silence, irritability, checking out or avoiding the
-                thing you know needs your attention.
+                delay, silence, irritability, checking out or avoiding the thing
+                you know needs your attention.
               </p>
             </div>
 
@@ -548,8 +550,8 @@ function WorryResetProgramme() {
                 <p>
                   I am Terry Loughran, Life & Mindset Coach for Men and founder
                   of Find Your Door. I support men in their 30s and 40s who feel
-                  stuck, have lost confidence or are carrying more than they
-                  let on.
+                  stuck, have lost confidence or are carrying more than they let
+                  on.
                 </p>
                 <p>
                   This programme was created to give men a calm, practical way
@@ -617,12 +619,12 @@ function WorryResetProgramme() {
               <h3>Important note</h3>
               <p>
                 The Worry Reset Programme and 10-Minute Worry Reset Worksheet
-                are for reflection, education and personal development. They
-                are not therapy, medical advice or a replacement for
-                professional mental health support. If anxiety feels severe,
-                persistent, unmanageable or you feel at risk of harming
-                yourself or someone else, please contact a qualified health
-                professional or emergency support service in your area.
+                are for reflection, education and personal development. They are
+                not therapy, medical advice or a replacement for professional
+                mental health support. If anxiety feels severe, persistent,
+                unmanageable or you feel at risk of harming yourself or someone
+                else, please contact a qualified health professional or
+                emergency support service in your area.
               </p>
             </aside>
           </div>
