@@ -7,9 +7,36 @@ const updatedAt = '19 June 2026';
 
 const schema = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  name: 'Cookie Policy - Find Your Door',
-  url: 'https://findyourdoor.ie/cookie-policy',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://findyourdoor.ie/cookie-policy#webpage',
+      name: 'Cookie Policy - Find Your Door',
+      url: 'https://findyourdoor.ie/cookie-policy',
+      isPartOf: {
+        '@id': 'https://findyourdoor.ie/#website',
+      },
+      inLanguage: 'en-IE',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://findyourdoor.ie/cookie-policy#breadcrumb',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://findyourdoor.ie/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Cookie Policy',
+          item: 'https://findyourdoor.ie/cookie-policy',
+        },
+      ],
+    },
+  ],
 };
 
 function CookiePolicy() {

@@ -336,7 +336,9 @@ function WorryResetProgramme() {
             <figure className={styles.heroCover}>
               <img
                 src={worksheetCover}
-                alt="The 10-Minute Worry Reset Worksheet"
+                alt="Cover of The 10-Minute Worry Reset Worksheet"
+                width="1055"
+                height="1491"
               />
             </figure>
           </div>
@@ -498,7 +500,10 @@ function WorryResetProgramme() {
               <figure className={styles.worksheetCover}>
                 <img
                   src={worksheetCover}
-                  alt="The 10-Minute Worry Reset Worksheet"
+                  alt="Cover of The 10-Minute Worry Reset Worksheet"
+                  loading="lazy"
+                  width="1055"
+                  height="1491"
                 />
               </figure>
 

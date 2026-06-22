@@ -62,8 +62,10 @@ function Hero() {
           <motion.aside className={styles.resetPanel} {...item(0.85)}>
             <img
               src="/10min%20WRW%20p1.png"
-              alt="The 10-Minute Worry Reset Worksheet"
+              alt="Cover of The 10-Minute Worry Reset Worksheet"
               className={styles.resetCover}
+              width="1055"
+              height="1491"
             />
             <div className={styles.resetCopy}>
               <p className={styles.resetKicker}>Free starting point</p>

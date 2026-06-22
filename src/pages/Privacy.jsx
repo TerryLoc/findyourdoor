@@ -5,9 +5,36 @@ import SEO from '@/components/SEO/SEO';
 
 const privacySchema = {
   '@context': 'https://schema.org',
-  '@type': 'WebPage',
-  name: 'Privacy Policy - Find Your Door',
-  url: 'https://findyourdoor.ie/privacy',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://findyourdoor.ie/privacy#webpage',
+      name: 'Privacy Policy - Find Your Door',
+      url: 'https://findyourdoor.ie/privacy',
+      isPartOf: {
+        '@id': 'https://findyourdoor.ie/#website',
+      },
+      inLanguage: 'en-IE',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://findyourdoor.ie/privacy#breadcrumb',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://findyourdoor.ie/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Privacy Policy',
+          item: 'https://findyourdoor.ie/privacy',
+        },
+      ],
+    },
+  ],
 };
 
 const Privacy = () => {
